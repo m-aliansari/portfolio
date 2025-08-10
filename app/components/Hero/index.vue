@@ -2,13 +2,36 @@
   <section id="hero" class="hero-section">
     <div class="hero-background">
       <NuxtImg
-        src="/images/chatgpt_generated_hero_image_upscaled.png"
+        v-show="isMobile"
+        src="/images/hero_image_mobile.png"
+        sizes="md:100vw"
+        preload
+        alt="Hero Background image"
+        format="webp"
+        quality="100"
+        style="
+          object-position: center;
+          overflow: hidden;
+          width: 100vw;
+          height: 100vh;
+          object-fit: cover;
+        "
+      />
+      <NuxtImg
+        v-show="!isMobile"
+        src="/images/hero_image.png"
         sizes="lg:100vw"
         preload
         alt="Hero Background image"
         format="webp"
         quality="100"
-        style="object-position: center;overflow: hidden; width: 100vw; height: 100vh; object-fit: cover;"
+        style="
+          object-position: center;
+          overflow: hidden;
+          width: 100vw;
+          height: 100vh;
+          object-fit: cover;
+        "
       />
       <div class="dark-overlay" />
     </div>
@@ -110,6 +133,65 @@
             View Experience
           </Motion>
         </div>
+        <Motion
+          is="div"
+          class="hero-socials"
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 500,
+              delay: 600,
+            },
+          }"
+        >
+          <NuxtLink
+            :to="personalInfo.whatsapp"
+            target="_blank"
+            class="social-icon"
+            aria-label="Whatsapp"
+            external
+          >
+            <Icons :name="ICON_NAMES.WHATSAPP" size="40" />
+          </NuxtLink>
+          <NuxtLink
+            :to="personalInfo.gmail"
+            target="_blank"
+            class="social-icon"
+            aria-label="Gmail"
+            external
+          >
+            <Icons :name="ICON_NAMES.GMAIL" size="40" />
+          </NuxtLink>
+          <NuxtLink
+            :to="personalInfo.github"
+            target="_blank"
+            class="social-icon"
+            aria-label="GitHub"
+            external
+          >
+            <Icon name="simple-icons:github" size="40" />
+          </NuxtLink>
+          <NuxtLink
+            :to="personalInfo.linkedin"
+            target="_blank"
+            class="social-icon"
+            aria-label="LinkedIn"
+            external
+          >
+            <Icons :name="ICON_NAMES.LINKEDIN" />
+          </NuxtLink>
+          <NuxtLink
+            :to="personalInfo.fiverr"
+            target="_blank"
+            class="social-icon"
+            aria-label="Fiverr"
+            external
+          >
+            <Icons :name="ICON_NAMES.FIVERR" />
+          </NuxtLink>
+        </Motion>
       </div>
     </div>
   </section>
@@ -118,7 +200,9 @@
 <script setup>
 import { PERSONAL_INFO } from "~/constants/personal";
 import { NuxtLink } from "#components";
+import { ICON_NAMES } from "~/constants/icons";
 
+const { isMobile } = useResponsive();
 const personalInfo = PERSONAL_INFO;
 </script>
 

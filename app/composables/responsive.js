@@ -3,20 +3,20 @@ export function useResponsive() {
     const windowHeight = ref(0)
 
     const isMobile = computed(() => {
-        return windowWidth < 768
+        return windowWidth.value < 768
     })
 
     const isTablet = computed(() => {
-        return windowWidth >= 768 && windowWidth < 1024
+        return windowWidth.value >= 768 && windowWidth.value < 1024
     }
     )
 
     const isDesktop = computed(() => {
-        return windowWidth >= 1024
+        return windowWidth.value >= 1024
     })
 
     const isLargeScreen = computed(() => {
-        return windowWidth >= 1280
+        return windowWidth.value >= 1280
     })
 
     function updateDimensions() {
@@ -32,7 +32,6 @@ export function useResponsive() {
     onUnmounted(() => {
         window.removeEventListener('resize', updateDimensions)
     })
-
 
     return { windowHeight, windowWidth, isDesktop, isMobile, isTablet, isLargeScreen }
 }

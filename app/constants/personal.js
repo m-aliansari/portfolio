@@ -3,8 +3,11 @@ export const PERSONAL_INFO = {
     title: 'Full Stack Developer',
     email: 'maliansari.coder@gmail.com',
     phone: '+923327295105',
-    whatsapp: '923327295105',
+    whatsapp: 'https://wa.me/923327295105',
     linkedin: 'https://www.linkedin.com/in/muhammad-ali-ansari-61304a1b3/',
+    github: 'https://github.com/m-aliansari',
+    fiverr: 'https://www.fiverr.com/maa_coding',
+    gmail: 'https://mail.google.com/?view=cm&to=maliansari.coder@gmail.com&su=Ready to Connect and Discuss Opportunities',
     experience: '4+ Years',
     about: {
         intro: 'I\'m a dedicated Full Stack Developer with over 4 years of experience building scalable web applications and digital solutions. My expertise spans the entire development stack, from crafting responsive user interfaces to architecting robust backend systems and deploying to cloud platforms.',

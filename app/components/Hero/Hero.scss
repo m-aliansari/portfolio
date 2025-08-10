@@ -55,18 +55,18 @@
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: #e2e8f0;
     opacity: 0.9;
 
     @media (max-width: 768px) {
-        font-size: 1.25rem;
+        font-size: 1.6rem;
     }
 
     @media (max-width: 480px) {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -146,5 +146,30 @@
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
         width: 200px;
+    }
+}
+
+.hero-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem; // Adds space above the icons
+
+    @media (max-width: 480px) {
+        margin-top: 2rem;
+    }
+}
+
+.social-icon {
+    color: #cbd5e1; // A slightly muted white
+    text-decoration: none;
+    font-size: 1.5rem; // Adjust size as needed for your icons
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #ffffff; // Bright white on hover
+        transform: scale(1.15); // Slight zoom effect
     }
 }

@@ -21,13 +21,15 @@
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           <NuxtLink
-            :to="`https://mail.google.com/?view=cm&to=${personalInfo.email}&su=Ready to Connect and Discuss Opportunities`"
+            :to="personalInfo.gmail"
             external
             target="_blank"
             style="text-decoration: none; color: unset"
           >
             <div class="contact-item">
-              <div class="contact-icon">📧</div>
+              <div class="contact-icon">
+                <Icons :name="ICON_NAMES.GMAIL" size="30" />
+              </div>
               <div>
                 <h3>Email</h3>
                 <p>{{ personalInfo.email }}</p>
@@ -43,7 +45,9 @@
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           <div class="contact-item">
-            <div class="contact-icon">📱</div>
+            <div class="contact-icon">
+              <Icon name="mdi:phone-incoming" size="30" />
+            </div>
             <div>
               <h3>Phone</h3>
               <p>{{ personalInfo.phone }}</p>
@@ -58,18 +62,14 @@
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           <NuxtLink
-            :to="`https://wa.me/${personalInfo.whatsapp}`"
+            :to="personalInfo.whatsapp"
             external
             target="_blank"
             style="text-decoration: none; color: unset"
           >
             <div class="contact-item">
-              <div class="contact-icon" style="background-color: white">
-                <Icon
-                  name="simple-icons:whatsapp"
-                  style="color: green"
-                  size="30px"
-                />
+              <div class="contact-icon">
+                <Icons :name="ICON_NAMES.WHATSAPP" size="30" />
               </div>
               <div>
                 <h3>WhatsApp</h3>
@@ -92,17 +92,13 @@
             style="text-decoration: none; color: unset"
           >
             <div class="contact-item">
-              <div class="contact-icon" style="background-color: white">
-                <Icon
-                  name="simple-icons:linkedin"
-                  style="color: #0a66c2"
-                  size="30px"
-                />
+              <div class="contact-icon">
+                <Icons :name="ICON_NAMES.LINKEDIN" size="30" />
               </div>
               <div>
                 <h3>LinkedIn</h3>
                 <p>
-                  {{ personalInfo.linkedin.replace('https://www.', '') }}
+                  {{ personalInfo.linkedin.replace("https://www.", "") }}
                 </p>
               </div>
             </div>
@@ -114,6 +110,7 @@
 </template>
 
 <script setup>
+import { ICON_NAMES } from "~/constants/icons";
 import { PERSONAL_INFO } from "~/constants/personal";
 
 const personalInfo = PERSONAL_INFO;
