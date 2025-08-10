@@ -1,0 +1,104 @@
+.review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+    }
+}
+
+.card-top {
+    display: flex;
+    gap: 0.875rem;
+    align-items: center;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 9999px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(2, 6, 23, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+
+.reference {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* rating stars */
+.rating {
+    margin-top: 6px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.star {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    stroke: #e5e7eb;
+    stroke-width: 1;
+    fill: transparent;
+    transition: transform 0.18s ease, fill 0.18s ease, stroke 0.18s ease;
+    transform-origin: center center;
+}
+
+.star.filled {
+    fill: #f59e0b;
+    /* amber */
+    stroke: #f59e0b;
+    transform: scale(1.05);
+    filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.12));
+}
+
+/* review text */
+.review-text {
+    color: #374151;
+    line-height: 1.6;
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+}
+
+/* small screens */
+@media (max-width: 480px) {
+    .avatar {
+        width: 56px;
+        height: 56px;
+    }
+
+    .star {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.location {
+    font-size: 0.875rem;
+    color: #6b7280; // muted gray
+    display: block;
+    margin-top: 2px;
+}

@@ -1,0 +1,49 @@
+.reviews-section {
+    padding: 5rem 0;
+    background: white;
+
+    .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.25rem;
+    }
+
+    .section-subtitle {
+        color: #6b7280;
+        margin-bottom: 1.75rem;
+    }
+}
+
+.reviews-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.more-reviews {
+    margin-top: 2rem;
+    text-align: center;
+
+    .more-text {
+        font-size: 1rem;
+        color: #4b5563; // Tailwind gray-600
+        margin-bottom: 0.5rem;
+    }
+
+    .more-link {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background-color: #10b981; // Tailwind emerald-500
+        color: white;
+        border-radius: 9999px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.25s ease;
+
+        &:hover {
+            background-color: #059669; // Tailwind emerald-600
+        }
+    }
+}

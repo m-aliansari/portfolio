@@ -1,0 +1,16 @@
+.skills-section {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.skills-content {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+} 
