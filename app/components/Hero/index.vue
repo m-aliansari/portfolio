@@ -27,7 +27,7 @@
       />
       <NuxtImg
         v-else
-        src="/images/hero_image_mobile.PNG"
+        src="/images/hero_image_mobile.png"
         :width="
           $viewport.isGreaterThan('mobileWide')
             ? '500'
