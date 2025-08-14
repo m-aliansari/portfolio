@@ -45,7 +45,7 @@
           >
             {{ link.name }}
           </NuxtLink>
-          <ul class="nested-links">
+          <ul v-if="$viewport.isLessOrEquals('tabletSmall')" class="nested-links">
             <li v-for="subPath in link.subPaths" :key="subPath.path">
               <NuxtLink
                 :id="subPath.path"

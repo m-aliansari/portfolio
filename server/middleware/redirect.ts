@@ -5,7 +5,6 @@ export default defineEventHandler((event) => {
 
   const host = req.headers.host || "";
   const url = event.node.req.url || "/";
-  console.log({ url });
 
   // Redirect Netlify subdomain to custom domain
   if (host === "muhammadaliansari-portfolio.netlify.app") {

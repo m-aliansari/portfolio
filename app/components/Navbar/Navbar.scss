@@ -139,7 +139,7 @@
     list-style: none;
     margin: 0.5rem 0 0 1rem;
     padding: 0;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
 
@@ -203,6 +203,7 @@
         }
 
         &__links {
+            overflow-y: auto;
             position: fixed;
             top: 0;
             right: -100%;
@@ -213,7 +214,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            padding: 5rem 2rem 2rem;
+            padding: 2rem 2rem 2rem;
             gap: 1.5rem;
             border-left: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -243,11 +244,6 @@
     }
 }
 
-@media (max-width: 652px) {
-    .nested-links {
-        display: flex;
-    }
-}
 
 @media (max-width: 480px) {
     .navbar {
