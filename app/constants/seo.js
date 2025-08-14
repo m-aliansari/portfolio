@@ -1,5 +1,3 @@
-import { SITE_URL } from "./config";
-
 export const SEO_CONFIG = {
     title: 'Muhammad Ali Ansari - Full Stack Developer',
     description: 'Full Stack Developer with 4+ years experience in Vue.js, React, Node.js, and cloud solutions. Based in Berlin, Germany. Specialized in performance optimization, SEO strategies, and cutting-edge technologies.',
@@ -10,7 +8,7 @@ export const SEO_CONFIG = {
         type: 'website',
         url: 'https://muhammadaliansari.com',
         image: {
-            path: `${SITE_URL}/_ipx/f_webp&q_85&s_1200x630/images/og-banner.PNG`,
+            path: `https://muhammadaliansari.com/_ipx/f_webp&q_85&s_1200x630/images/og-banner.PNG`,
             alt: "Portfolio image of Muhammad Ali Ansari, Full Stack Developer specializing in Vue.js, Nuxt.js, React, and Node.js",
             width: "1200",
             height: "630",
@@ -23,7 +21,7 @@ export const SEO_CONFIG = {
         card: 'summary_large_image',
         title: 'Muhammad Ali Ansari - Full Stack Developer',
         description: 'Full Stack Developer with 4+ years experience in Vue.js, React, Node.js, and cloud solutions.',
-        image: `${SITE_URL}/_ipx/f_webp&q_85&s_1200x675/images/og-banner.PNG`
+        image: `https://muhammadaliansari.com/_ipx/f_webp&q_85&s_1200x675/images/og-banner.PNG`
     },
     additional: {
         author: 'Muhammad Ali Ansari',
