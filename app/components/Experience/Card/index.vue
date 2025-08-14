@@ -1,6 +1,6 @@
 <template>
   <Motion
-    tag="div"
+    is="div"
     class="experience-card"
     :initial="{ opacity: 0, y: 50 }"
     :visible-once="{ opacity: 1, y: 0 }"
@@ -31,9 +31,9 @@
     <div class="card-content">
       <ul class="achievements-list">
         <Motion
+          is="li"
           v-for="(achievement, achievementIndex) in job.achievements"
           :key="achievementIndex"
-          tag="li"
           class="achievement-item"
           :initial="{ opacity: 0, x: -20 }"
           :enter="{ opacity: 1, x: 0 }"

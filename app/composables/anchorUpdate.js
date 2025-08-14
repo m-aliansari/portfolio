@@ -1,9 +1,11 @@
 import { SECTIONS } from "~/constants/navigation";
 
 export const useAnchorUpdate = () => {
-    const sectionIds = SECTIONS;
+    const sections = SECTIONS;
     const currentId = ref("");
     let observer = null;
+
+    const { windowWidth } = useResponsive()
 
     const handleIntersect = (entries) => {
         const calcs = entries.map((entry) => ({
@@ -16,17 +18,17 @@ export const useAnchorUpdate = () => {
             (entry) => entry.intersectPercent > 0.5 || entry.screenCoverPercent > 0.5
         );
         if (!filtered?.length)
-            if (currentId.value === sectionIds[0]) {
-                if (calcs[0].id !== sectionIds[0]) return;
+            if (currentId.value === sections[0].id) {
+                if (calcs[0].id !== sections[0].id) return;
                 history.replaceState({ ...history.state }, "", window.location.pathname);
                 currentId.value = "";
 
-                //   console.log(
+                // console.log(
                 //     `no id has more than 50% intersection or more than 50% screen cover`
-                //   );
-                //   console.log(JSON.stringify(calcs));
+                // );
+                // console.log(JSON.stringify(calcs));
 
-                //   console.log(`removing hash`);
+                // console.log(`removing hash`);
                 return;
             }
 
@@ -35,15 +37,18 @@ export const useAnchorUpdate = () => {
             if (filtered.length === 1) {
                 history.replaceState({ ...history.state }, "", filtered[0].id);
                 currentId.value = filtered[0].id;
-                //   console.log(`${filtered[0].id} is the first id`);
+                // console.log(`${filtered[0].id} is the first id`);
 
-                //   console.log(`changing to ${filtered[0].id}`);
+                // console.log(`changing to ${filtered[0].id}`);
                 return;
             }
         }
         filtered = calcs.filter(
             (entry) => entry.intersectPercent > 0.75 || entry.screenCoverPercent > 0.6
         );
+
+        // console.log(calcs);
+
 
         if (!filtered?.length) return;
 
@@ -53,7 +58,7 @@ export const useAnchorUpdate = () => {
             history.replaceState({ ...history.state }, "", filtered[0].id);
             currentId.value = filtered[0].id;
             // console.log(
-            //   `${filtered[0].id} has either more than 75% intersection or more than 60% screen cover`
+            //     `${filtered[0].id} has either more than 75% intersection or more than 60% screen cover`
             // );
 
             // console.log(`changing to ${filtered[0].id}`);
@@ -63,12 +68,12 @@ export const useAnchorUpdate = () => {
             intersectPercent: 0,
             screenCoverPercent: 0,
         };
-        //   let screenFlag = false;
+        // let screenFlag = false;
         for (const entry of filtered) {
             if (entry.screenCoverPercent > 0.6) {
                 mostVisibleElement = { ...entry };
-                //   console.log(`${entry.id} covers more than 60% screen`);
-                //   screenFlag = true;
+                // console.log(`${entry.id} covers more than 60% screen`);
+                // screenFlag = true;
                 break;
             }
             if (entry.intersectPercent > mostVisibleElement.intersectPercent) {
@@ -79,9 +84,9 @@ export const useAnchorUpdate = () => {
         if (currentId.value === mostVisibleElement.id) return;
         history.replaceState({ ...history.state }, "", filtered[0].id);
         currentId.value = filtered[0].id;
-        //   if (!screenFlag) console.log(`${filtered[0].id} has more intersect percent`);
+        // if (!screenFlag) console.log(`${filtered[0].id} has more intersect percent`);
 
-        //   console.log(`changing to ${filtered[0].id}`);
+        // console.log(`changing to ${filtered[0].id}`);
     };
 
     let isScrolling;
@@ -102,19 +107,49 @@ export const useAnchorUpdate = () => {
         observer = new IntersectionObserver(debouncedHandler, {
             root: null,
             rootMargin: "0px",
-            threshold: Array.from({ length: 101 }, (_, i) => i / 100), // thresholds from 0.00 to 1.00
+            threshold: Array.from({ length: 201 }, (_, i) => i / 200), // thresholds from 0.00 to 1.00
         });
 
-        sectionIds.forEach((id) => {
-            const el = document.querySelector(id);
+        sections.forEach((section) => {
+            const el = document.querySelector(section.id);
             if (el) observer.observe(el);
+
+            if (!section.nested || windowWidth.value > 652) return
+
+            section.subSections.forEach(subSection => {
+                const subEl = document.querySelector(subSection);
+                if (subEl) observer.observe(subEl);
+            })
         });
     });
+
+    watch(windowWidth, (val, prev) => {
+        if (prev > 652 && val <= 652) {
+            sections.forEach((section) => {
+                if (section.nested) {
+                    section.subSections.forEach(subSection => {
+                        const subEl = document.querySelector(subSection);
+                        if (subEl) observer.observe(subEl);
+                    })
+                }
+            });
+        }
+        if (prev <= 652 && val > 652) {
+            sections.forEach((section) => {
+                if (section.nested) {
+                    section.subSections.forEach(subSection => {
+                        const subEl = document.querySelector(subSection);
+                        if (subEl) observer.unobserve(subEl);
+                    })
+                }
+            });
+        }
+    })
 
     onUnmounted(() => {
         observer?.disconnect();
         window.removeEventListener('scroll', scrollHandler);
-       clearTimeout(isScrolling)
+        clearTimeout(isScrolling)
     });
     return { currentId }
 };

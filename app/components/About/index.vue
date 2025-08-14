@@ -2,7 +2,7 @@
   <section id="about" class="about-section">
     <div class="container">
       <Motion
-        tag="div"
+        is="div"
         class="section-header"
         :initial="{ opacity: 0, y: 30 }"
         :enter="{ opacity: 1, y: 0 }"
@@ -17,7 +17,7 @@
 
       <div class="about-content">
         <Motion
-          tag="div"
+          is="div"
           class="about-text"
           :initial="{ opacity: 0, x: -60 }"
           :visible-once="{ opacity: 1, x: 0 }"
@@ -29,7 +29,7 @@
         </Motion>
 
         <Motion
-          tag="div"
+          is="div"
           class="about-stats"
           :initial="{ opacity: 0, x: 60 }"
           :visible-once="{ opacity: 1, x: 0 }"

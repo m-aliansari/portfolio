@@ -2,7 +2,7 @@
   <section id="contact" class="contact-section">
     <div class="container">
       <Motion
-        tag="div"
+        is="div"
         class="section-header"
         :initial="{ opacity: 0, y: 30 }"
         :enter="{ opacity: 1, y: 0 }"
@@ -14,7 +14,7 @@
 
       <div class="contact-content">
         <Motion
-          tag="div"
+          is="div"
           class="contact-info"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"
@@ -38,7 +38,7 @@
           </NuxtLink>
         </Motion>
         <Motion
-          tag="div"
+          is="div"
           class="contact-info"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"
@@ -55,7 +55,7 @@
           </div>
         </Motion>
         <Motion
-          tag="div"
+          is="div"
           class="contact-info"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"
@@ -79,7 +79,7 @@
           </NuxtLink>
         </Motion>
         <Motion
-          tag="div"
+          is="div"
           class="contact-info"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"

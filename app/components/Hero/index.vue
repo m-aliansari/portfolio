@@ -2,13 +2,21 @@
   <section id="hero" class="hero-section">
     <div class="hero-background">
       <NuxtImg
-        v-show="isMobile"
-        src="/images/hero_image_mobile.png"
-        sizes="md:100vw"
-        preload
+        v-if="$viewport.isGreaterThan('mobileStart')"
+        src="/images/hero_image.png"
+        :preload="{ fetchPriority: 'high' }"
         alt="Hero Background image"
         format="webp"
-        quality="100"
+        quality="70"
+        :width="
+          $viewport.isGreaterThan('desktopMedium')
+            ? '1600'
+            : $viewport.isGreaterThan('desktop')
+            ? '1280'
+            : $viewport.isGreaterThan('tablet')
+            ? '1024'
+            : '768'
+        "
         style="
           object-position: center;
           overflow: hidden;
@@ -18,13 +26,21 @@
         "
       />
       <NuxtImg
-        v-show="!isMobile"
-        src="/images/hero_image.png"
-        sizes="lg:100vw"
-        preload
+        v-else
+        src="/images/hero_image_mobile.png"
+        :width="
+          $viewport.isGreaterThan('mobileWide')
+            ? '500'
+            : $viewport.isGreaterThan('mobileMedium')
+            ? '425'
+            : $viewport.isGreaterThan('mobile')
+            ? '375'
+            : '320'
+        "
+        :preload="{ fetchPriority: 'high' }"
         alt="Hero Background image"
         format="webp"
-        quality="100"
+        quality="50"
         style="
           object-position: center;
           overflow: hidden;
@@ -202,7 +218,6 @@ import { PERSONAL_INFO } from "~/constants/personal";
 import { NuxtLink } from "#components";
 import { ICON_NAMES } from "~/constants/icons";
 
-const { isMobile } = useResponsive();
 const personalInfo = PERSONAL_INFO;
 </script>
 

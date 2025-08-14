@@ -1,24 +1,25 @@
 .experience-section {
-  padding: 5rem 0;
-  background: white;
+    padding: 2rem 0;
+    background: #f8fafc;
+    scroll-margin-top: 80px;
 }
 
 .timeline {
-  margin-top: 3rem;
-  position: relative;
+    margin-top: 3rem;
+    position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
-    transform: translateX(-50%);
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+        transform: translateX(-50%);
 
-    @media (max-width: 768px) {
-      left: 20px;
+        @media (max-width: 768px) {
+            left: 20px;
+        }
     }
-  }
-} 
+}

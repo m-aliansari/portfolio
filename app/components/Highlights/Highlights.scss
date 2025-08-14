@@ -1,6 +1,7 @@
 .highlights-section {
-    padding: 5rem 0;
+    padding: 2rem 0;
     background: white;
+    scroll-margin-top: 80px;
 }
 
 .highlights-grid {
@@ -9,6 +10,7 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     align-items: center;
+    padding-bottom: 3rem;
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;

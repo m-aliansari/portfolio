@@ -20,7 +20,7 @@
         quality="100"
       />
       <div class="person">
-        <h4 class="name">{{ review.name }}</h4>
+        <h3 class="name">{{ review.name }}</h3>
         <span v-if="review.location" class="location">
           📍 {{ review.location }}
         </span>

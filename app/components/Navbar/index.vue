@@ -33,7 +33,7 @@
             opacity: 1,
             transition: {
               duration: 600,
-              delay: isMobile ? 0 : 300 + index * 100,
+              delay: 100 + index * ($viewport.isLessOrEquals('tabletSmall') ? 0 : 100),
             },
           }"
         >
@@ -45,6 +45,18 @@
           >
             {{ link.name }}
           </NuxtLink>
+          <ul class="nested-links">
+            <li v-for="subPath in link.subPaths" :key="subPath.path">
+              <NuxtLink
+                :id="subPath.path"
+                :to="subPath.path"
+                class="nested"
+                @click="handleClick(subPath.path)"
+              >
+                {{ subPath.name }}
+              </NuxtLink>
+            </li>
+          </ul>
         </Motion>
       </ul>
     </div>
@@ -62,8 +74,8 @@ const personalInfo = PERSONAL_INFO;
 const isMobileMenuOpen = ref(false);
 const currentPath = ref("");
 
-const { isMobile } = useResponsive();
 const { currentId } = useAnchorUpdate();
+const { isMobile } = useResponsive();
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -80,6 +92,36 @@ const handleClick = (path) => {
   }
 };
 
+const addActiveClass = (id) => {
+  // id = /#skills-frontend
+  const el = document.getElementById(id);
+
+  if (el) el.classList.add("active");
+
+  const splittedId = id.split("-");
+
+  if (splittedId.length > 0) {
+    const el = document.getElementById(splittedId[0]);
+    if (el) el.classList.add("active");
+  }
+};
+
+const removeActiveClass = (id, newId) => {
+  // id = #skills-backend, newId = #skills-frontend
+  const newIdSplitted = newId.split("-"); // [#skills, frontend]
+  if (newIdSplitted[0] === id) return; //false
+  const mainEl = document.getElementById(id);
+  if (mainEl) mainEl.classList.remove("active"); // removed from #skills-backend
+
+  const prevIdSplitted = id.split("-"); // [#skills, backend]
+
+  if (prevIdSplitted.length > 1 && prevIdSplitted[0] !== newIdSplitted[0]) {
+    // true && #skills !== #skills (false)
+    const el = document.getElementById(prevIdSplitted[0]);
+    if (el) el.classList.remove("active");
+  }
+};
+
 watch(currentId, (val, prev) => {
   if (val !== prev) currentPath.value = `/${val}`;
 });
@@ -91,18 +133,13 @@ watch(currentPath, (val, prev) => {
 
   if (prev) {
     if (prev !== "") {
-      const prevEl = document.getElementById(prev);
-      if (prevEl) prevEl.classList.remove("active");
+      removeActiveClass(prev, val);
     }
   }
 
   if (val === "" || !val) return;
 
-  const id = val;
-
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.classList.add("active");
+  addActiveClass(val);
 });
 </script>
 
