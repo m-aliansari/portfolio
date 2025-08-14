@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://muhammadaliansari-portfolio.netlify.app"
-  to = "https://muhammadaliansari.com"
+  from = "https://muhammadaliansari-portfolio.netlify.app*"
+  to = "https://muhammadaliansari.com*"
   status = 301
   force = true
