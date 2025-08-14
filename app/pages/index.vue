@@ -69,7 +69,7 @@ useHead({
             name: "Muhammad Ali Ansari",
             url: "https://muhammadaliansari.com",
             image:
-              "https://muhammadaliansari.com/images/muhammad-ali-ansari-profile-picture.webp",
+              "https://muhammadaliansari.com/.netlify/images?url=/images/muhammad-ali-ansari-profile-picture.webp",
             description:
               "Full Stack Developer with 4+ years of experience in Vue.js, Nuxt.js, React, Node.js, and cloud solutions. Skilled in performance optimization, SEO, and cutting-edge web technologies.",
             jobTitle: "Full Stack Developer",

@@ -8,12 +8,12 @@ export const SEO_CONFIG = {
         type: 'website',
         url: 'https://muhammadaliansari.com',
         image: {
-            path: `https://muhammadaliansari.com/_ipx/f_webp&q_85&s_1200x630/images/og-banner.PNG`,
+            path: 'https://muhammadaliansari.com/.netlify/images?fm=webp&w=1200&h=630&url=/images/og-banner.PNG',
             alt: "Portfolio image of Muhammad Ali Ansari, Full Stack Developer specializing in Vue.js, Nuxt.js, React, and Node.js",
             width: "1200",
             height: "630",
             type: "image/webp",
-            secure_url: "https://muhammadaliansari.com/_ipx/f_webp&q_85&s_1200x630/images/og-banner.PNG"
+            secure_url: "https://muhammadaliansari.com/.netlify/images?fm=webp&w=1200&h=630&url=/images/og-banner.PNG"
         },
         siteName: 'Muhammad Ali Ansari Portfolio'
     },
@@ -21,7 +21,7 @@ export const SEO_CONFIG = {
         card: 'summary_large_image',
         title: 'Muhammad Ali Ansari - Full Stack Developer',
         description: 'Full Stack Developer with 4+ years experience in Vue.js, React, Node.js, and cloud solutions.',
-        image: `https://muhammadaliansari.com/_ipx/f_webp&q_85&s_1200x675/images/og-banner.PNG`
+        image: 'https://muhammadaliansari.com/.netlify/images?fm=webp&w=1200&h=675&url=/images/og-banner.PNG'
     },
     additional: {
         author: 'Muhammad Ali Ansari',
