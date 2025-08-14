@@ -35,7 +35,11 @@
         "overrides": {
             "sharp": "0.33.4"
         },
-        "ignoredBuiltDependencies": [
+        "onlyBuiltDependencies": [
+            "@parcel/watcher",
+            "esbuild",
+            "sharp",
+            "unrs-resolver",
             "vue-demi"
         ]
     }

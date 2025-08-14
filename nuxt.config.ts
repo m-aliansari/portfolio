@@ -70,6 +70,7 @@ export default defineNuxtConfig({
 
   // Performance optimizations
   nitro: {
+    preset: "netlify_edge",
     minify: true,
     compressPublicAssets: {
       brotli: true,
