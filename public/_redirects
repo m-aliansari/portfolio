@@ -1,2 +1,4 @@
 https://muhammadaliansari-portfolio.netlify.app  https://muhammadaliansari.com  301!
+https://muhammadaliansari-portfolio.netlify.app/  https://muhammadaliansari.com/  301!
+https://muhammadaliansari-portfolio.netlify.app/.netlify/*  https://muhammadaliansari.com/:splat  301!
 https://muhammadaliansari-portfolio.netlify.app/*  https://muhammadaliansari.com/:splat  301!
