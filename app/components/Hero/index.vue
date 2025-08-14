@@ -3,7 +3,7 @@
     <div class="hero-background">
       <NuxtImg
         v-if="$viewport.isGreaterThan('mobileStart')"
-        src="/images/hero_image.png"
+        src="/images/hero_image.PNG"
         :preload="{ fetchPriority: 'high' }"
         alt="Hero Background image"
         format="webp"
@@ -27,7 +27,7 @@
       />
       <NuxtImg
         v-else
-        src="/images/hero_image_mobile.png"
+        src="/images/hero_image_mobile.PNG"
         :width="
           $viewport.isGreaterThan('mobileWide')
             ? '500'
