@@ -50,9 +50,6 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "nuxt-viewport",
   ],
-  site: {
-    trailingSlash: true,
-  },
 
   viewport: {
     breakpoints: {
