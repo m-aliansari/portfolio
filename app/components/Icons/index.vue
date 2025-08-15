@@ -1,8 +1,7 @@
 <template>
   <IconsLinkedin
     v-if="name === ICON_NAMES.LINKEDIN"
-    :width="size"
-    :height="size"
+    :width="parseInt(size)"
   />
   <IconsFiverr
     v-if="name === ICON_NAMES.FIVERR"
@@ -11,6 +10,11 @@
   />
   <IconsWhatsapp
     v-if="name === ICON_NAMES.WHATSAPP"
+    :width="size"
+    :height="size"
+  />
+  <IconsEmail
+    v-if="name === ICON_NAMES.EMAIL"
     :width="size"
     :height="size"
   />

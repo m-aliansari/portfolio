@@ -2,7 +2,7 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     :width="width"
-    :height="height"
+    :height="width * 0.8"
     viewBox="0 0 256 256"
   >
     <path
@@ -16,12 +16,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
   width: {
-    type: String,
-    default: "256",
-  },
-  height: {
-    type: String,
-    default: "256",
+    type: Number,
+    default: 256,
   },
 });
 </script>

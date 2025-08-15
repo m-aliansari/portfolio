@@ -27,9 +27,7 @@
             style="text-decoration: none; color: unset"
           >
             <div :class="styles.contactItem">
-              <div :class="styles.contactIcon">
-                <Icons :name="ICON_NAMES.GMAIL" size="30" />
-              </div>
+              <Icons :name="ICON_NAMES.GMAIL" size="40" />
               <div>
                 <h3>Email</h3>
                 <p>{{ personalInfo.email }}</p>
@@ -45,9 +43,7 @@
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           <div :class="styles.contactItem">
-            <div :class="styles.contactIcon">
-              <Icon name="mdi:phone-incoming" size="30" />
-            </div>
+            <Icon name="mdi:phone-incoming" size="40" />
             <div>
               <h3>Phone</h3>
               <p>{{ personalInfo.phone }}</p>
@@ -68,9 +64,7 @@
             style="text-decoration: none; color: unset"
           >
             <div :class="styles.contactItem">
-              <div :class="styles.contactIcon">
-                <Icons :name="ICON_NAMES.WHATSAPP" size="30" />
-              </div>
+              <Icons :name="ICON_NAMES.WHATSAPP" size="40" />
               <div>
                 <h3>WhatsApp</h3>
                 <p>Chat on WhatsApp</p>
@@ -92,9 +86,7 @@
             style="text-decoration: none; color: unset"
           >
             <div :class="styles.contactItem">
-              <div :class="styles.contactIcon">
-                <Icons :name="ICON_NAMES.LINKEDIN" size="30" />
-              </div>
+              <Icons :name="ICON_NAMES.LINKEDIN" size="50" />
               <div>
                 <h3>LinkedIn</h3>
                 <p>
@@ -112,7 +104,7 @@
 <script setup>
 import { ICON_NAMES } from "~/constants/icons";
 import { PERSONAL_INFO } from "~/constants/personal";
-import styles from "./Contact.module.scss"
+import styles from "./Contact.module.scss";
 
 const personalInfo = PERSONAL_INFO;
 </script>

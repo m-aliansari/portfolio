@@ -4,7 +4,7 @@
       <NuxtImg
         v-if="$viewport.isGreaterThan('mobileStart')"
         src="/images/hero_image.PNG"
-        :preload="{fetchPriority: 'high'}"
+        :preload="{ fetchPriority: 'high' }"
         fetchpriority="high"
         loading="eager"
         alt="Modern development dashboard background"
@@ -39,7 +39,7 @@
             ? '375'
             : '320'
         "
-        :preload="{fetchPriority: 'high'}"
+        :preload="{ fetchPriority: 'high' }"
         fetchpriority="high"
         loading="eager"
         alt="Modern development dashboard background"
@@ -58,113 +58,41 @@
 
     <div class="container">
       <div class="hero-content">
-        <Motion
-          is="h1"
+        <h1
           class="hero-title"
-          :initial="{
-            opacity: 0,
-            x: -100,
-          }"
-          :enter="{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 1000,
-              type: 'spring',
-              stiffness: 250,
-              damping: 25,
-            },
-          }"
         >
           {{ personalInfo.name }}
-        </Motion>
+        </h1>
 
-        <Motion
-          is="h2"
+        <h2
           class="hero-subtitle"
-          :initial="{
-            opacity: 0,
-            x: -100,
-          }"
-          :enter="{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 1000,
-              type: 'spring',
-              stiffness: 250,
-              damping: 25,
-              delay: 200,
-            },
-          }"
         >
           {{ personalInfo.title }}
-        </Motion>
+        </h2>
 
-        <Motion
-          is="p"
+        <p
           class="hero-description"
-          :initial="{
-            opacity: 0,
-            x: -100,
-          }"
-          :enter="{
-            opacity: 1,
-            x: 0,
-            transition: {
-              duration: 1000,
-              type: 'spring',
-              stiffness: 250,
-              damping: 25,
-              delay: 400,
-            },
-          }"
         >
           Crafting exceptional digital experiences with modern technologies.
           Specialized in Vue.js, React, Node.js, and cloud solutions.
-        </Motion>
+        </p>
 
         <div class="hero-cta">
-          <Motion
-            :is="NuxtLink"
+          <NuxtLink
             to="#contact"
             class="btn btn-primary"
-            :initial="{ opacity: 0, y: 20 }"
-            :enter="{
-              opacity: 1,
-              y: 0,
-              transitionDuration: '0.6s',
-            }"
           >
             Get In Touch
-          </Motion>
-          <Motion
-            :is="NuxtLink"
+          </NuxtLink>
+          <NuxtLink
             to="#experience"
             class="btn btn-secondary"
-            :initial="{ opacity: 0, y: 20 }"
-            :enter="{
-              opacity: 1,
-              y: 0,
-              transitionDuration: '0.6s',
-              transitionDelay: '0.2s',
-            }"
           >
             View Experience
-          </Motion>
+          </NuxtLink>
         </div>
-        <Motion
-          is="div"
+        <div
           class="hero-socials"
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 500,
-              delay: 600,
-            },
-          }"
         >
           <NuxtLink
             :to="personalInfo.whatsapp"
@@ -173,7 +101,10 @@
             aria-label="Whatsapp"
             external
           >
-            <Icons :name="ICON_NAMES.WHATSAPP" size="40" />
+            <Icons
+              :name="ICON_NAMES.WHATSAPP"
+              :size="$viewport.isLessThan('mobileWide') ? '30' : '40'"
+            />
           </NuxtLink>
           <NuxtLink
             :to="personalInfo.gmail"
@@ -182,7 +113,10 @@
             aria-label="Gmail"
             external
           >
-            <Icons :name="ICON_NAMES.GMAIL" size="40" />
+            <Icons
+              :name="ICON_NAMES.GMAIL"
+              :size="$viewport.isLessThan('mobileWide') ? '30' : '40'"
+            />
           </NuxtLink>
           <NuxtLink
             :to="personalInfo.github"
@@ -191,7 +125,10 @@
             aria-label="GitHub"
             external
           >
-            <Icon name="simple-icons:github" size="40" />
+            <Icon
+              name="simple-icons:github"
+              :size="$viewport.isLessThan('mobileWide') ? '30' : '40'"
+            />
           </NuxtLink>
           <NuxtLink
             :to="personalInfo.linkedin"
@@ -200,7 +137,10 @@
             aria-label="LinkedIn"
             external
           >
-            <Icons :name="ICON_NAMES.LINKEDIN" />
+            <Icons
+              :name="ICON_NAMES.LINKEDIN"
+              :size="$viewport.isLessThan('mobileWide') ? '38' : '45'"
+            />
           </NuxtLink>
           <NuxtLink
             :to="personalInfo.fiverr"
@@ -209,9 +149,12 @@
             aria-label="Fiverr"
             external
           >
-            <Icons :name="ICON_NAMES.FIVERR" />
+            <Icons
+              :name="ICON_NAMES.FIVERR"
+              :size="$viewport.isLessThan('mobileWide') ? '30' : '40'"
+            />
           </NuxtLink>
-        </Motion>
+        </div>
       </div>
     </div>
   </section>
