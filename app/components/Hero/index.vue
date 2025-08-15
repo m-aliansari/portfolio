@@ -58,41 +58,113 @@
 
     <div class="container">
       <div class="hero-content">
-        <h1
+        <Motion
+          is="h1"
           class="hero-title"
+          :initial="{
+            opacity: 0.1,
+            x: -100,
+          }"
+          :enter="{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1000,
+              type: 'spring',
+              stiffness: 250,
+              damping: 25,
+            },
+          }"
         >
           {{ personalInfo.name }}
-        </h1>
+        </Motion>
 
-        <h2
+        <Motion
+          is="h2"
           class="hero-subtitle"
+          :initial="{
+            opacity: 0.1,
+            x: -100,
+          }"
+          :enter="{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1000,
+              type: 'spring',
+              stiffness: 250,
+              damping: 25,
+              delay: 200,
+            },
+          }"
         >
           {{ personalInfo.title }}
-        </h2>
+        </Motion>
 
-        <p
+        <Motion
+          is="p"
           class="hero-description"
+          :initial="{
+            opacity: 0.1,
+            x: -100,
+          }"
+          :enter="{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1000,
+              type: 'spring',
+              stiffness: 250,
+              damping: 25,
+              delay: 400,
+            },
+          }"
         >
           Crafting exceptional digital experiences with modern technologies.
           Specialized in Vue.js, React, Node.js, and cloud solutions.
-        </p>
+        </Motion>
 
         <div class="hero-cta">
-          <NuxtLink
+          <Motion
+            :is="NuxtLink"
             to="#contact"
             class="btn btn-primary"
+            :initial="{ opacity: 0.1, y: 20 }"
+            :enter="{
+              opacity: 1,
+              y: 0,
+              transitionDuration: '0.6s',
+            }"
           >
             Get In Touch
-          </NuxtLink>
-          <NuxtLink
+          </Motion>
+          <Motion
+            :is="NuxtLink"
             to="#experience"
             class="btn btn-secondary"
+            :initial="{ opacity: 0.1, y: 20 }"
+            :enter="{
+              opacity: 1,
+              y: 0,
+              transitionDuration: '0.6s',
+              transitionDelay: '0.2s',
+            }"
           >
             View Experience
-          </NuxtLink>
+          </Motion>
         </div>
-        <div
+        <Motion
+          is="div"
           class="hero-socials"
+          :initial="{ opacity: 0.1, y: 20 }"
+          :enter="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 500,
+              delay: 600,
+            },
+          }"
         >
           <NuxtLink
             :to="personalInfo.whatsapp"
@@ -154,7 +226,7 @@
               :size="$viewport.isLessThan('mobileWide') ? '30' : '40'"
             />
           </NuxtLink>
-        </div>
+        </Motion>
       </div>
     </div>
   </section>
