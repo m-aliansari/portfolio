@@ -28,7 +28,7 @@ const props = defineProps({
   },
 });
 </script>
-<style>
+<style scoped>
 .a {
   fill: #1dbf73;
 }

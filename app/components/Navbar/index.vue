@@ -64,7 +64,6 @@
 </template>
 
 <script setup>
-import { useAnchorUpdate } from "~/composables/anchorUpdate";
 import { NAV_LINKS } from "~/constants/navigation";
 import { PERSONAL_INFO } from "~/constants/personal";
 

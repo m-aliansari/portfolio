@@ -4,8 +4,10 @@
       <NuxtImg
         v-if="$viewport.isGreaterThan('mobileStart')"
         src="/images/hero_image.PNG"
-        :preload="{ fetchPriority: 'high' }"
-        alt="Hero Background image"
+        preload
+        fetchpriority="high"
+        loading="eager"
+        alt="Modern development dashboard background"
         format="webp"
         quality="70"
         :width="
@@ -27,7 +29,7 @@
       />
       <NuxtImg
         v-else
-        src="/images/hero_image_mobile.png"
+        src="/images/hero_image_mobile.webp"
         :width="
           $viewport.isGreaterThan('mobileWide')
             ? '500'
@@ -37,8 +39,10 @@
             ? '375'
             : '320'
         "
-        :preload="{ fetchPriority: 'high' }"
-        alt="Hero Background image"
+        preload
+        fetchpriority="high"
+        loading="eager"
+        alt="Modern development dashboard background"
         format="webp"
         quality="50"
         style="

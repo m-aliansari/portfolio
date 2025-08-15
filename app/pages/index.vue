@@ -6,7 +6,9 @@
     <LazyAbout hydrate-on-visible />
     <LazySkills hydrate-on-visible />
     <LazyExperience hydrate-on-visible />
-    <LazyContact hydrate-on-visible />
+    <ClientOnly>
+      <LazyContact hydrate-on-visible />
+    </ClientOnly>
   </div>
 </template>
 
@@ -54,12 +56,13 @@ useHead({
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://muhammadaliansari.com/#website",
-            url: "https://muhammadaliansari.com",
+            "@id": "https://muhammadaliansari.com/",
+            url: "https://muhammadaliansari.com/",
             name: "Muhammad Ali Ansari Portfolio",
             description:
               "Portfolio of Muhammad Ali Ansari, Full Stack Developer specializing in Vue.js, Nuxt.js, React, Node.js, and cloud solutions.",
             publisher: {
+              "@type": "Person",
               "@id": "https://muhammadaliansari.com/#person",
             },
           },
@@ -67,9 +70,9 @@ useHead({
             "@type": "Person",
             "@id": "https://muhammadaliansari.com/#person",
             name: "Muhammad Ali Ansari",
-            url: "https://muhammadaliansari.com",
+            url: "https://muhammadaliansari.com/",
             image:
-              "https://muhammadaliansari.com/.netlify/images?url=/images/muhammad-ali-ansari-profile-picture.webp",
+              "https://muhammadaliansari.com/images/muhammad-ali-ansari-profile-picture.webp",
             description:
               "Full Stack Developer with 4+ years of experience in Vue.js, Nuxt.js, React, Node.js, and cloud solutions. Skilled in performance optimization, SEO, and cutting-edge web technologies.",
             jobTitle: "Full Stack Developer",
@@ -114,6 +117,10 @@ useHead({
               "https://www.linkedin.com/in/muhammad-ali-ansari-61304a1b3/",
               "https://www.fiverr.com/maa_coding",
             ],
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://muhammadaliansari.com/",
+            },
           },
         ],
       }),
