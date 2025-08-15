@@ -38,21 +38,21 @@
     }
 
     &__logo {
-        .logo-link {
+        .logoLink {
             text-decoration: none;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
-        .logo-text {
+        .logoText {
             font-weight: 700;
             font-size: 1.5rem;
             color: #fff;
             line-height: 1;
         }
 
-        .logo-subtitle {
+        .logoSubtitle {
             font-size: 0.75rem;
             color: #888;
             font-weight: 600;
@@ -60,7 +60,7 @@
         }
     }
 
-    &__mobile-toggle {
+    &__mobileToggle {
         display: none;
         cursor: pointer;
         z-index: 1001;
@@ -106,7 +106,7 @@
         margin: 0;
         padding: 0;
 
-        .nav-link {
+        .navLink {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
@@ -137,7 +137,7 @@
     }
 }
 
-.nested-links {
+.nestedLinks {
     list-style: none;
     margin: 0.5rem 0 0 1rem;
     padding: 0;
@@ -200,7 +200,7 @@
     .navbar {
         padding: 1rem;
 
-        &__mobile-toggle {
+        &__mobileToggle {
             display: block;
         }
 
@@ -220,11 +220,11 @@
             gap: 1.5rem;
             border-left: 1px solid rgba(255, 255, 255, 0.1);
 
-            &.mobile-open {
+            &.mobileOpen {
                 right: 0;
             }
 
-            .nav-link {
+            .navLink {
                 font-size: 1.1rem;
                 padding: 0.75rem 0;
                 width: 100%;
@@ -250,11 +250,11 @@
 @media (max-width: 480px) {
     .navbar {
         &__logo {
-            .logo-text {
+            .logoText {
                 font-size: 1.25rem;
             }
 
-            .logo-subtitle {
+            .logoSubtitle {
                 font-size: 0.7rem;
             }
         }

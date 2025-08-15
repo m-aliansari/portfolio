@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="contact-section">
+  <section id="contact" :class="styles.contactSection">
     <div class="container">
       <Motion
         is="div"
@@ -12,10 +12,10 @@
         <p class="section-subtitle">Let's discuss your next project</p>
       </Motion>
 
-      <div class="contact-content">
+      <div :class="styles.contactContent">
         <Motion
           is="div"
-          class="contact-info"
+          :class="styles.contactInfo"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
@@ -26,8 +26,8 @@
             target="_blank"
             style="text-decoration: none; color: unset"
           >
-            <div class="contact-item">
-              <div class="contact-icon">
+            <div :class="styles.contactItem">
+              <div :class="styles.contactIcon">
                 <Icons :name="ICON_NAMES.GMAIL" size="30" />
               </div>
               <div>
@@ -39,13 +39,13 @@
         </Motion>
         <Motion
           is="div"
-          class="contact-info"
+          :class="styles.contactInfo"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
-          <div class="contact-item">
-            <div class="contact-icon">
+          <div :class="styles.contactItem">
+            <div :class="styles.contactIcon">
               <Icon name="mdi:phone-incoming" size="30" />
             </div>
             <div>
@@ -56,7 +56,7 @@
         </Motion>
         <Motion
           is="div"
-          class="contact-info"
+          :class="styles.contactInfo"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
@@ -67,8 +67,8 @@
             target="_blank"
             style="text-decoration: none; color: unset"
           >
-            <div class="contact-item">
-              <div class="contact-icon">
+            <div :class="styles.contactItem">
+              <div :class="styles.contactIcon">
                 <Icons :name="ICON_NAMES.WHATSAPP" size="30" />
               </div>
               <div>
@@ -80,7 +80,7 @@
         </Motion>
         <Motion
           is="div"
-          class="contact-info"
+          :class="styles.contactInfo"
           :initial="{ opacity: 0, x: -50 }"
           :enter="{ opacity: 1, x: 0 }"
           :transition="{ duration: 0.6, delay: 0.2 }"
@@ -91,8 +91,8 @@
             external
             style="text-decoration: none; color: unset"
           >
-            <div class="contact-item">
-              <div class="contact-icon">
+            <div :class="styles.contactItem">
+              <div :class="styles.contactIcon">
                 <Icons :name="ICON_NAMES.LINKEDIN" size="30" />
               </div>
               <div>
@@ -112,10 +112,7 @@
 <script setup>
 import { ICON_NAMES } from "~/constants/icons";
 import { PERSONAL_INFO } from "~/constants/personal";
+import styles from "./Contact.module.scss"
 
 const personalInfo = PERSONAL_INFO;
 </script>
-
-<style lang="scss" scoped>
-@use "./Contact.scss";
-</style>

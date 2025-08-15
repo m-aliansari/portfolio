@@ -1,5 +1,5 @@
 <template>
-  <section id="reviews" class="reviews-section">
+  <section id="reviews" :class="styles.reviewsSection">
     <div class="container">
       <Motion
         is="div"
@@ -12,7 +12,7 @@
         <p class="section-subtitle">What people say about working with me</p>
       </Motion>
 
-      <div class="reviews-list">
+      <div :class="styles.reviewsList">
         <ReviewsCard
           v-for="(review, index) in reviewsData"
           :key="review.name + index"
@@ -23,18 +23,18 @@
       <!-- More Reviews CTA -->
       <Motion
         is="div"
-        class="more-reviews"
+        :class="styles.moreReviews"
         :initial="{ opacity: 0, y: 20 }"
         :visible-once="{ opacity: 1, y: 0 }"
         :transition="{ duration: 0.5, delay: 0.2 }"
       >
-        <p class="more-text">
+        <p :class="styles.moreText">
           Loved these stories? There’s more where that came from! 🌟
         </p>
         <NuxtLink
           href="https://www.fiverr.com/maa_coding"
           target="_blank"
-          class="more-link"
+          :class="styles.moreLink"
         >
           View more reviews on Fiverr →
         </NuxtLink>
@@ -45,10 +45,7 @@
 
 <script setup>
 import { REVIEWS_DATA } from "~/constants/reviews";
+import styles from "./Reviews.module.scss"
 
 const reviewsData = REVIEWS_DATA;
 </script>
-
-<style lang="scss" scoped>
-@use "./Reviews.scss";
-</style>

@@ -1,22 +1,21 @@
 <template>
   <div class="layout">
     <Navbar />
-    <main class="main-content">
+    <main class="mainContent">
       <NuxtPage />
     </main>
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
-<style scoped>
+<style lang="scss">
 .layout {
   min-height: 100vh;
   max-width: 100vw;
 }
 
-.main-content {
+.mainCntent {
   padding-top: 80px;
 }
 </style>

@@ -2,38 +2,38 @@
   <Motion
     is="div"
     v-once
-    class="highlight-card"
+    :class="styles.highlightCard"
     :initial="{ opacity: 0, y: 50 }"
     :visible-once="{ opacity: 1, y: 0 }"
     :transition="{ duration: 0.6, delay: index * 0.2 }"
   >
-    <div class="card-image">
+    <div :class="styles.cardImage">
       <Swiper
         ref="swiperRef"
         :modules="[Navigation, Pagination]"
         :navigation="true"
         :pagination="true"
-        class="image-carousel card"
+        class="imageCarousel card"
       >
         <SwiperSlide
           v-for="(image, imgIndex) in highlight.images"
           :key="imgIndex"
-          class="carousel-slide"
+          :class="styles.carouselSlide"
         >
           <NuxtImg
             :src="image.path"
             :alt="`${highlight.title} - Image ${imgIndex + 1}`"
-            class="project-image card"
+            class="projectImage card"
             height="250"
             width="350"
             loading="lazy"
             format="webp"
             quality="80"
           />
-          <div class="image-overlay">
+          <div :class="styles.imageOverlay">
             <Motion
               is="div"
-              class="stats-grid"
+              :class="styles.statsGrid"
               :initial="{ opacity: 0, scale: 0.8 }"
               :hovered="{ opacity: 1, scale: 1 }"
               :transition="{ duration: 0.3 }"
@@ -41,21 +41,21 @@
               <div
                 v-for="(value, key) in highlight.stats"
                 :key="key"
-                class="stat-item"
+                :class="styles.statItem"
               >
-                <span class="stat-value">{{ key }}</span>
-                <span class="stat-label">{{ value }}</span>
+                <span :class="styles.statValue">{{ key }}</span>
+                <span :class="styles.statLabel">{{ value }}</span>
               </div>
             </Motion>
           </div>
         </SwiperSlide>
       </Swiper>
     </div>
-    <div class="card-content">
-      <h3 class="highlight-title">{{ highlight.title }}</h3>
-      <p class="highlight-description">{{ highlight.description }}</p>
+    <div :class="styles.cardContent">
+      <h3 :class="styles.highlightTitle">{{ highlight.title }}</h3>
+      <p :class="styles.highlightDescription">{{ highlight.description }}</p>
 
-      <div class="highlight-skills">
+      <div :class="styles.highlightSkills">
         <Motion
           is="div"
           v-for="(skill, skillIndex) in highlight.skills"
@@ -70,15 +70,15 @@
             },
           }"
         >
-          <span class="skill-badge">
+          <span :class="styles.skillBadge">
             {{ skill }}
           </span>
         </Motion>
       </div>
 
-      <div class="card-actions">
+      <div :class="styles.cardActions">
         <button
-          class="btn-view"
+          :class="styles.btnView"
           aria-label="View Details button"
           @click="openModal"
         >
@@ -87,39 +87,46 @@
       </div>
     </div>
   </Motion>
-  <div v-if="isModalOpen" class="modal-backdrop" @click.self="closeModal">
-    <div class="modal-content">
-      <div class="image-carousel">
+  <div
+    v-if="isModalOpen"
+    :class="styles.modalBackdrop"
+    @click.self="closeModal"
+  >
+    <div :class="styles.modalContent">
+      <div :class="styles.imageCarousel">
         <Swiper
           ref="modalSwiperRef"
           :modules="[Navigation, Pagination]"
           :navigation="true"
           :pagination="true"
-          class="image-carousel"
+          :class="styles.imageCarousel"
         >
           <SwiperSlide
             v-for="(image, imgIndex) in highlight.images"
             :key="imgIndex"
-            class="modal-carousel-slide"
+            :class="styles.modalCarouselSlide"
           >
-            <div class="image-wrapper">
+            <div :class="styles.imageWrapper">
               <!-- Info label and hover info -->
-              <div class="info-container">
+              <div :class="styles.infoContainer">
                 <span
-                  class="info-label"
+                  :class="styles.infoLabel"
                   @mouseenter="hoverShowInfo = true"
                   @mouseleave="hoverShowInfo = false"
                   @click="toggleClickShowInfo"
                   >Hover or Click for more info</span
                 >
-                <div v-if="hoverShowInfo || clickShowInfo" class="image-info">
+                <div
+                  v-if="hoverShowInfo || clickShowInfo"
+                  :class="styles.imageInfo"
+                >
                   {{ image.description }}
                 </div>
               </div>
               <NuxtImg
                 :src="image.path"
                 :alt="`${highlight.title} - Image ${imgIndex + 1}`"
-                class="project-image"
+                :class="styles.projectImage"
                 style="width: 80vw; border-radius: 10px"
                 fit="cover"
                 sizes="lg:80vw"
@@ -131,7 +138,7 @@
           </SwiperSlide>
         </Swiper>
       </div>
-      <button class="close-button" @click="closeModal">&times;</button>
+      <button :class="styles.closeButton" @click="closeModal">&times;</button>
     </div>
   </div>
 </template>
@@ -143,6 +150,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import styles from "./Card.module.scss";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
@@ -172,7 +180,3 @@ const closeModal = () => {
   clickShowInfo.value = false;
 };
 </script>
-
-<style lang="scss" scoped>
-@use "./Card.scss";
-</style>

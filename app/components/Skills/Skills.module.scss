@@ -1,10 +1,10 @@
-.skills-section {
+.skillsSection {
     padding: 2rem 0;
     background: white;
     scroll-margin-top: 80px;
 }
 
-.skills-grid {
+.skillsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -12,7 +12,7 @@
     padding-bottom: 3rem;
 }
 
-.skill-card {
+.skillCard {
     background: white;
     border-radius: 16px;
     overflow: hidden;
@@ -33,23 +33,23 @@
 
 
 @media (max-width: 768px) {
-    .skills-grid {
+    .skillsGrid {
         gap: 1.3rem;
     }
 
-    .skill-card {
+    .skillCard {
         padding: 1.3rem;
     }
 }
 
-.skill-title {
+.skillTitle {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: #3b82f6;
 }
 
-.skill-list {
+.skillList {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -57,7 +57,7 @@
     li {
         margin-bottom: 1rem;
 
-        .skill-label {
+        .skillLabel {
             font-size: 1rem;
             margin-bottom: 0.2rem;
             font-weight: 600;
@@ -69,7 +69,7 @@
     }
 }
 
-.skill-text-list {
+.skillTextList {
     list-style: disc;
     padding-left: 1.2rem;
     margin-top: 0.4rem;

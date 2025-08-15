@@ -1,5 +1,5 @@
 <template>
-  <section id="highlights" class="highlights-section">
+  <section id="highlights" :class="styles.highlightsSection">
     <div class="container">
       <Motion
         is="div"
@@ -9,10 +9,12 @@
         :transition="{ duration: 0.6 }"
       >
         <h2 class="section-title">Key Achievements</h2>
-        <p class="section-subtitle">Notable projects and accomplishments</p>
+        <p class="section-subtitle">
+          Notable projects and accomplishments
+        </p>
       </Motion>
 
-      <div class="highlights-grid">
+      <div :class="styles.highlightsGrid">
         <HighlightsCard
           v-for="(highlight, index) in highlightsData"
           :key="highlight.id"
@@ -26,10 +28,7 @@
 
 <script setup>
 import { HIGHLIGHTS_DATA } from "~/constants/highlights";
+import styles from "./Highlights.module.scss";
 
 const highlightsData = HIGHLIGHTS_DATA;
 </script>
-
-<style lang="scss" scoped>
-@use "./Highlights.scss";
-</style>

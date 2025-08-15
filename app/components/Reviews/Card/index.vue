@@ -2,32 +2,32 @@
   <Motion
     is="div"
     v-once
-    class="review-card"
+    :class="styles.reviewCard"
     :initial="{ opacity: 0, y: 50 }"
     :visible-once="{ opacity: 1, y: 0 }"
     :transition="{ duration: 0.55, delay: index * 0.15 }"
   >
-    <div class="card-top">
+    <div :class="styles.cardTop">
       <NuxtImg
         v-if="review.imagePath"
         :src="review.imagePath"
         :alt="`${review.name} avatar`"
-        class="avatar"
+        :class="styles.avatar"
         width="72"
         height="72"
         loading="lazy"
         format="webp"
         quality="100"
       />
-      <div class="person">
-        <h3 class="name">{{ review.name }}</h3>
-        <span v-if="review.location" class="location">
+      <div :class="styles.person">
+        <h3 :class="styles.name">{{ review.name }}</h3>
+        <span v-if="review.location" :class="styles.location">
           📍 {{ review.location }}
         </span>
-        <span class="reference">{{ review.reference }}</span>
+        <span :class="styles.reference">{{ review.reference }}</span>
 
         <div
-          class="rating"
+          :class="styles.rating"
           role="img"
           :aria-label="`${rating} out of 5 stars`"
           tabindex="-1"
@@ -36,8 +36,7 @@
             v-for="n in 5"
             :key="n"
             viewBox="0 0 24 24"
-            class="star"
-            :class="{ filled: n <= rating }"
+            :class="[styles.star, n <= rating ? styles.filled : '']"
             aria-hidden="true"
             focusable="false"
           >
@@ -50,11 +49,12 @@
       </div>
     </div>
 
-    <p class="review-text">{{ review.review }}</p>
+    <p :class="styles.reviewText">{{ review.review }}</p>
   </Motion>
 </template>
 
 <script setup>
+import styles from "./Card.module.scss";
 const props = defineProps({
   review: {
     type: Object,
@@ -73,7 +73,3 @@ const rating = computed(() => {
   return 5;
 });
 </script>
-
-<style lang="scss" scoped>
-@use "./Card.scss";
-</style>

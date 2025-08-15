@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="about-section">
+  <section id="about" :class="styles.aboutSection">
     <div class="container">
       <Motion
         is="div"
@@ -15,10 +15,10 @@
         </p>
       </Motion>
 
-      <div class="about-content">
+      <div :class="styles.aboutContent">
         <Motion
           is="div"
-          class="about-text"
+          :class="styles.aboutText"
           :initial="{ opacity: 0, x: -60 }"
           :visible-once="{ opacity: 1, x: 0 }"
           :transition="{ duration: 1.5, delay: 0.4 }"
@@ -30,7 +30,7 @@
 
         <Motion
           is="div"
-          class="about-stats"
+          :class="styles.aboutStats"
           :initial="{ opacity: 0, x: 60 }"
           :visible-once="{ opacity: 1, x: 0 }"
           :transition="{ duration: 1.5, delay: 0.4 }"
@@ -38,7 +38,7 @@
           <div
             v-for="(stat, index) in personalInfo.stats"
             :key="index"
-            class="stat-item"
+            :class="styles.statItem"
           >
             <h3>{{ stat.value }}</h3>
             <p>{{ stat.label }}</p>
@@ -51,10 +51,7 @@
 
 <script setup>
 import { PERSONAL_INFO } from "~/constants/personal";
+import styles from "./About.module.scss"
 
 const personalInfo = PERSONAL_INFO;
 </script>
-
-<style lang="scss" scoped>
-@use "./About.scss";
-</style>

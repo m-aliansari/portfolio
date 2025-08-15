@@ -1,4 +1,4 @@
-.highlight-card {
+.highlightCard {
     background: white;
     border-radius: 16px;
     overflow: hidden;
@@ -15,13 +15,13 @@
     }
 }
 
-.card-image {
+.cardImage {
     position: relative;
     height: 250px;
     overflow: hidden;
 }
 
-.image-carousel {
+.imageCarousel {
     position: relative;
     overflow: hidden;
 
@@ -31,7 +31,7 @@
     }
 }
 
-.carousel-container {
+.carouselContainer {
     display: flex;
     transition: transform 0.5s ease;
 
@@ -41,12 +41,12 @@
     }
 }
 
-.carousel-slide {
+.carouselSlide {
     min-width: 100%;
     height: 100%;
 }
 
-.project-image {
+.projectImage {
     object-fit: cover;
     object-position: top;
 
@@ -60,7 +60,7 @@
     }
 }
 
-.carousel-nav {
+.carouselNav {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -70,7 +70,7 @@
     z-index: 10;
 }
 
-.nav-dot {
+.navDot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -89,7 +89,7 @@
     }
 }
 
-.image-overlay {
+.imageOverlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -104,11 +104,11 @@
     z-index: 3;
 }
 
-.card-image:hover .image-overlay {
+.cardImage:hover .imageOverlay {
     opacity: 1;
 }
 
-.stats-grid {
+.statsGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -116,19 +116,19 @@
     width: 100%;
 }
 
-.stat-item {
+.statItem {
     text-align: center;
     color: white;
 }
 
-.stat-value {
+.statValue {
     display: block;
     font-size: 1.2rem;
     font-weight: 700;
     color: #3b82f6;
 }
 
-.stat-label {
+.statLabel {
     display: block;
     font-size: 0.8rem;
     color: #e5e7eb;
@@ -136,14 +136,14 @@
     letter-spacing: 0.5px;
 }
 
-.card-content {
+.cardContent {
     padding: 1.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.highlight-title {
+.highlightTitle {
     font-size: 1.3rem;
     font-weight: 700;
     color: #1f2937;
@@ -151,18 +151,18 @@
     line-height: 1.3;
 }
 
-.highlight-description {
+.highlightDescription {
     color: #6b7280;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     flex: 1;
 }
 
-.card-actions {
+.cardActions {
     margin-top: auto;
 }
 
-.btn-view {
+.btnView {
     background: linear-gradient(135deg, #3b82f6, #8b5cf6);
     color: white;
     border: none;
@@ -181,28 +181,28 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .highlight-title {
+    .highlightTitle {
         font-size: 1.2rem;
     }
 
-    .card-content {
+    .cardContent {
         padding: 1.25rem;
     }
 
-    .stats-grid {
+    .statsGrid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
     }
 
-    .stat-value {
+    .statValue {
         font-size: 1.1rem;
     }
 
-    .stat-label {
+    .statLabel {
         font-size: 0.75rem;
     }
 
-    .carousel-btn {
+    .carouselBtn {
         width: 28px;
         height: 28px;
         font-size: 16px;
@@ -210,15 +210,15 @@
 }
 
 @media (max-width: 480px) {
-    .highlight-title {
+    .highlightTitle {
         font-size: 1.1rem;
     }
 
-    .card-content {
+    .cardContent {
         padding: 1rem;
     }
 
-    .carousel-btn {
+    .carouselBtn {
         width: 24px;
         height: 24px;
         font-size: 14px;
@@ -227,7 +227,7 @@
 
 
 // magnify modal styles
-.modal-backdrop {
+.modalBackdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -241,20 +241,20 @@
 }
 
 
-.modal-content {
+.modalContent {
     position: relative;
     border-radius: 8px;
     max-width: 80vw;
     overflow: hidden;
 }
 
-.modal-carousel-slide {
+.modalCarouselSlide {
     max-width: 100%;
     max-height: 90vh;
 }
 
 
-.close-button {
+.closeButton {
     position: absolute;
     top: 15px;
     right: 25px;
@@ -265,13 +265,13 @@
     cursor: pointer;
 }
 
-.image-wrapper {
+.imageWrapper {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.info-container {
+.infoContainer {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -280,7 +280,7 @@
     flex-direction: column;
     align-items: flex-start;
 
-    .info-label {
+    .infoLabel {
         background-color: rgb(0, 0, 0, 0.8);
         color: white;
         font-size: 20px;
@@ -295,7 +295,7 @@
         }
     }
 
-    .image-info {
+    .imageInfo {
         margin-top: 6px;
         background: rgba(0, 0, 0);
         color: #ffffff;
@@ -308,14 +308,14 @@
     }
 }
 
-.highlight-skills {
+.highlightSkills {
     margin-bottom: 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem;
 
-    .skill-badge {
+    .skillBadge {
         background: rgba(0, 0, 0, 0.15);
         padding: 0.35rem 0.75rem;
         border-radius: 20px;

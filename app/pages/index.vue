@@ -1,14 +1,12 @@
 <template>
-  <div class="portfolio-page">
+  <div>
     <Hero />
     <LazyReviews hydrate-on-idle />
     <LazyHighlights hydrate-on-visible />
     <LazyAbout hydrate-on-visible />
     <LazySkills hydrate-on-visible />
     <LazyExperience hydrate-on-visible />
-    <ClientOnly>
-      <LazyContact hydrate-on-visible />
-    </ClientOnly>
+    <LazyContact hydrate-on-visible />
   </div>
 </template>
 
@@ -129,5 +127,5 @@ useHead({
 });
 </script>
 <style lang="scss">
-@use "./main.scss";
+@use "~/assets/scss/main.scss";
 </style>

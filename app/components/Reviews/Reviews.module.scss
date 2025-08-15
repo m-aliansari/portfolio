@@ -1,27 +1,27 @@
-.reviews-section {
+.reviewsSection {
     padding: 2rem 0;
     background: #f8fafc;
     scroll-margin-top: 80px;
 }
 
-.reviews-list {
+.reviewsList {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
 }
 
-.more-reviews {
+.moreReviews {
     margin-top: 2rem;
     text-align: center;
 
-    .more-text {
+    .moreText {
         font-size: 1rem;
         color: #4b5563; // Tailwind gray-600
         margin-bottom: 0.5rem;
     }
 
-    .more-link {
+    .moreLink {
         display: inline-block;
         padding: 0.6rem 1.2rem;
         background-color: #10b981; // Tailwind emerald-500

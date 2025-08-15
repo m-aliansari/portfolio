@@ -28,10 +28,12 @@ const props = defineProps({
   },
 });
 </script>
-<style scoped>
+
+<style lang="scss">
 .a {
   fill: #1dbf73;
 }
+
 .b {
   fill: #fff;
 }

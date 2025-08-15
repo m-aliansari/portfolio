@@ -9,21 +9,21 @@
         :hovered="{ scale: 1.05 }"
         :tapped="{ scale: 0.95 }"
       >
-        <NuxtLink to="/" class="logo-link">
-          <span class="logo-text">{{ personalInfo.name }}</span>
-          <span class="logo-subtitle">{{ personalInfo.title }}</span>
+        <NuxtLink to="/" class="logoLink">
+          <span class="logoText">{{ personalInfo.name }}</span>
+          <span class="logoSubtitle">{{ personalInfo.title }}</span>
         </NuxtLink>
       </Motion>
 
-      <div class="navbar__mobile-toggle" @click="toggleMobileMenu">
-        <div class="hamburger" :class="{ active: isMobileMenuOpen }">
+      <div class="navbar__mobileToggle" @click="toggleMobileMenu">
+        <div :class="['hamburger', { active: isMobileMenuOpen }]">
           <span />
           <span />
           <span />
         </div>
       </div>
 
-      <ul class="navbar__links" :class="{ 'mobile-open': isMobileMenuOpen }">
+      <ul :class="['navbar__links', { mobileOpen: isMobileMenuOpen }]">
         <Motion
           is="li"
           v-for="(link, index) in navLinks"
@@ -33,19 +33,24 @@
             opacity: 1,
             transition: {
               duration: 600,
-              delay: 100 + index * ($viewport.isLessOrEquals('tabletSmall') ? 0 : 100),
+              delay:
+                100 +
+                index * ($viewport.isLessOrEquals('tabletSmall') ? 0 : 100),
             },
           }"
         >
           <NuxtLink
             :id="link.path"
             :to="link.path"
-            class="nav-link"
+            class="navLink"
             @click="handleClick(link.path)"
           >
             {{ link.name }}
           </NuxtLink>
-          <ul v-if="$viewport.isLessOrEquals('tabletSmall')" class="nested-links">
+          <ul
+            v-if="$viewport.isLessOrEquals('tabletSmall')"
+            class="nestedLinks"
+          >
             <li v-for="subPath in link.subPaths" :key="subPath.path">
               <NuxtLink
                 :id="subPath.path"
@@ -141,7 +146,6 @@ watch(currentPath, (val, prev) => {
   addActiveClass(val);
 });
 </script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 @use "./Navbar.scss";
 </style>

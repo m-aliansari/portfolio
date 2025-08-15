@@ -1,5 +1,5 @@
 <template>
-  <section id="experience" class="experience-section">
+  <section id="experience" :class="styles.experienceSection">
     <div class="container">
       <Motion
         is="div"
@@ -12,7 +12,7 @@
         <p class="section-subtitle">My journey in software development</p>
       </Motion>
 
-      <div class="timeline">
+      <div :class="styles.timeline">
         <ExperienceCard
           v-for="(job, index) in experienceData"
           :key="job.id"
@@ -26,10 +26,7 @@
 
 <script setup>
 import { EXPERIENCE_DATA } from "~/constants/experience";
+import styles from "./Experience.module.scss"
 
 const experienceData = EXPERIENCE_DATA;
 </script>
-
-<style lang="scss" scoped>
-@use "./Experience.scss";
-</style>

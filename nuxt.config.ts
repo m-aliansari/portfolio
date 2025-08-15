@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-
+  css: undefined,
   app: {
     baseURL: "/",
     head: {
@@ -42,6 +42,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  //   features: {
+  //     inlineStyles: false,
+  //   },
 
   modules: [
     "@nuxt/eslint",

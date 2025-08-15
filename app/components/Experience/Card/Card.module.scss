@@ -1,4 +1,4 @@
-.experience-card {
+.experienceCard {
   background: white;
   border-radius: 16px;
   padding: 2rem;
@@ -26,18 +26,18 @@
   }
 }
 
-.card-header {
+.cardHeader {
   margin-bottom: 1.5rem;
 }
 
-.job-title {
+.jobTitle {
   font-size: 1.5rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.5rem;
 }
 
-.company-details {
+.companyDetails {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -45,7 +45,7 @@
   flex-wrap: wrap;
 }
 
-.company-name {
+.companyName {
   font-weight: 600;
   color: #3b82f6;
   font-size: 1.1rem;
@@ -56,7 +56,7 @@
   font-size: 0.9rem;
 }
 
-.period-website {
+.periodWebsite {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -69,7 +69,7 @@
   font-weight: 500;
 }
 
-.website-link {
+.websiteLink {
   color: #3b82f6;
   text-decoration: none;
   font-size: 0.9rem;
@@ -82,17 +82,17 @@
   }
 }
 
-.card-content {
+.cardContent {
   margin-top: 1.5rem;
 }
 
-.achievements-list {
+.achievementsList {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.achievement-item {
+.achievementItem {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
@@ -117,38 +117,38 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .experience-card {
+  .experienceCard {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
   
-  .job-title {
+  .jobTitle {
     font-size: 1.3rem;
   }
   
-  .company-details {
+  .companyDetails {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
   }
   
-  .period-website {
+  .periodWebsite {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
   }
   
-  .achievement-item {
+  .achievementItem {
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .experience-card {
+  .experienceCard {
     padding: 1rem;
   }
   
-  .job-title {
+  .jobTitle {
     font-size: 1.2rem;
   }
 } 
