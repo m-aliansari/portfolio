@@ -4,7 +4,7 @@
       <NuxtImg
         v-if="$viewport.isGreaterThan('mobileStart')"
         src="/images/hero_image.PNG"
-        preload
+        :preload="{fetchPriority: 'high'}"
         fetchpriority="high"
         loading="eager"
         alt="Modern development dashboard background"
@@ -39,7 +39,7 @@
             ? '375'
             : '320'
         "
-        preload
+        :preload="{fetchPriority: 'high'}"
         fetchpriority="high"
         loading="eager"
         alt="Modern development dashboard background"
