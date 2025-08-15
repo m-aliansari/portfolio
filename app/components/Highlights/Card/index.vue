@@ -24,10 +24,11 @@
             :src="image.path"
             :alt="`${highlight.title} - Image ${imgIndex + 1}`"
             class="project-image card"
-            height="400"
+            height="250"
+            width="350"
             loading="lazy"
             format="webp"
-            quality="100"
+            quality="80"
           />
           <div class="image-overlay">
             <Motion

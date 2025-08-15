@@ -145,6 +145,7 @@ export default defineNuxtConfig({
               file.endsWith(".css") &&
               asset.source.toString().trim() === ""
             ) {
+              // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
               delete bundle[file];
             }
           }
