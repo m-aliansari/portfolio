@@ -13,7 +13,7 @@
         :modules="[Navigation, Pagination]"
         :navigation="true"
         :pagination="true"
-        class="imageCarousel card"
+        :class="[styles.imageCarousel, styles.card]"
       >
         <SwiperSlide
           v-for="(image, imgIndex) in highlight.images"
@@ -23,12 +23,11 @@
           <NuxtImg
             :src="image.path"
             :alt="`${highlight.title} - Image ${imgIndex + 1}`"
-            class="projectImage card"
-            height="250"
-            width="350"
+            :class="[styles.projectImage, styles.card]"
+            width="500"
             loading="lazy"
             format="webp"
-            quality="80"
+            quality="100"
           />
           <div :class="styles.imageOverlay">
             <Motion
@@ -76,7 +75,7 @@
         </Motion>
       </div>
 
-      <div :class="styles.cardActions">
+      <div v-if="windowWidth > windowHeight" :class="styles.cardActions">
         <button
           :class="styles.btnView"
           aria-label="View Details button"
@@ -92,8 +91,8 @@
     :class="styles.modalBackdrop"
     @click.self="closeModal"
   >
-    <div :class="styles.modalContent">
-      <div :class="styles.imageCarousel">
+    <div :class="[styles.modalContent]">
+      <div>
         <Swiper
           ref="modalSwiperRef"
           :modules="[Navigation, Pagination]"
@@ -126,10 +125,9 @@
               <NuxtImg
                 :src="image.path"
                 :alt="`${highlight.title} - Image ${imgIndex + 1}`"
-                :class="styles.projectImage"
-                style="width: 80vw; border-radius: 10px"
+                :class="[styles.projectImage, styles.modalImage]"
                 fit="cover"
-                sizes="lg:80vw"
+                sizes="lg:150vw"
                 loading="lazy"
                 format="webp"
                 quality="100"
@@ -164,6 +162,8 @@ const isModalOpen = ref(false);
 const selectedImage = ref(null);
 const clickShowInfo = ref(false);
 const hoverShowInfo = ref(false);
+
+const { windowWidth, windowHeight } = useResponsive();
 
 const toggleClickShowInfo = () => {
   clickShowInfo.value = !clickShowInfo.value;

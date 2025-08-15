@@ -42,20 +42,30 @@
 }
 
 .carouselSlide {
-    min-width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .projectImage {
-    object-fit: cover;
+    object-fit: contain;
     object-position: top;
+    border-radius: 10px;
 
     &.card {
         width: 100%;
-        height: 100%;
 
         &:hover {
             background-color: rgba(0, 0, 0);
+        }
+    }
+
+    &.modalImage {
+        width: 90vw;
+
+        &.modalRotate {
+            width: 90vh;
         }
     }
 }
@@ -244,8 +254,14 @@
 .modalContent {
     position: relative;
     border-radius: 8px;
-    max-width: 80vw;
+    max-width: 90vw;
     overflow: hidden;
+
+    &.modalRotate {
+        max-height: 90vw;
+        max-width: 90vh;
+        transform: rotate(90deg);
+    }
 }
 
 .modalCarouselSlide {
