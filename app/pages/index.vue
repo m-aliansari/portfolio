@@ -122,5 +122,5 @@ useHead({
 });
 </script>
 <style lang="scss">
-@use "~/assets/scss/main.scss";
+@use "./main.scss";
 </style>

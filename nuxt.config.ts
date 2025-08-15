@@ -25,17 +25,19 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         { rel: "apple-touch-icon", href: "/icons/apple-touch-icon.png" },
         { rel: "manifest", href: "/manifest.json" },
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "",
+          rel: "preload",
+          as: "font",
+          href: "/fonts/Inter/Inter-Bold.woff2",
+          type: "font/woff2",
+          crossorigin: "", // keep empty attribute; safe for caching and same/any origin
         },
         {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap",
-          media: "print",
-          onload: "this.media='all'",
+          rel: "preload",
+          as: "font",
+          href: "/fonts/Inter/Inter-ExtraBold.woff2",
+          type: "font/woff2",
+          crossorigin: "", // keep empty attribute; safe for caching and same/any origin
         },
       ],
     },
@@ -86,18 +88,68 @@ export default defineNuxtConfig({
 
   // SSR for better SEO
   ssr: true,
+  hooks: {
+    "build:manifest": (manifest) => {
+      // find the app entry, css list
+      const css = Object.values(manifest).find(
+        (options) => options.isEntry
+      )?.css;
+      if (css) {
+        // start from the end of the array and go to the beginning
+        for (let i = css.length - 1; i >= 0; i--) {
+          // if it starts with 'entry', remove it from the list
+          if (css[i]?.startsWith("entry")) css.splice(i, 1);
+        }
+      }
+    },
+  },
 
   // Vite optimizations
   vite: {
     build: {
       cssCodeSplit: true,
+      cssMinify: true,
       rollupOptions: {
         output: {
           manualChunks: {
             vendor: ["vue", "vue-router"],
           },
+          assetFileNames(assetInfo) {
+            // prevent empty entry.css
+            const fileNames = assetInfo.names || []; // new Rollup API
+            const firstName = fileNames[0] || "";
+
+            // console.log({fileNames});
+
+            // Skip writing if it's an empty CSS file
+            if (firstName === "style.css" || firstName.endsWith(".css")) {
+              if (assetInfo.source?.toString().trim().length === 0) {
+                return null; // returning empty prevents writing
+              }
+            }
+            return firstName || "[name].[hash][extname]";
+          },
         },
       },
     },
+    plugins: [
+      {
+        name: "remove-empty-css",
+        generateBundle(_, bundle) {
+          for (const file in bundle) {
+            const asset = bundle[file];
+
+            // Check if it's an asset and a CSS file
+            if (
+              asset?.type === "asset" &&
+              file.endsWith(".css") &&
+              asset.source.toString().trim() === ""
+            ) {
+              delete bundle[file];
+            }
+          }
+        },
+      },
+    ],
   },
 });
