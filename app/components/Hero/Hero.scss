@@ -35,7 +35,11 @@
     z-index: 1;
     position: relative;
 
-    @media (max-width: 480px) {
+    @media (max-width: 534px) {
+        padding: 1rem;
+    }
+
+    @media (max-width: 420px) {
         padding: 0.5rem;
     }
 }
@@ -54,7 +58,12 @@
         font-size: 2.5rem;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 534px) {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 420px) {
         font-size: 1.6rem;
         margin-bottom: 0.6rem;
     }
@@ -71,7 +80,12 @@
         font-size: 1.6rem;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 534px) {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 420px) {
         font-size: 1.2rem;
         margin-bottom: 0.6rem;
     }
@@ -91,7 +105,12 @@
         margin-bottom: 2rem;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 534px) {
+        font-size: 1rem;
+        margin-bottom: 1.6rem;
+    }
+
+    @media (max-width: 420px) {
         font-size: 0.95rem;
         margin-bottom: 1rem;
     }
@@ -120,8 +139,10 @@
     display: inline-block;
     font-size: 1rem;
 
-    &:hover {
-        transform: translateY(-2px);
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-2px);
+        }
     }
 
     &.btn-primary {
@@ -129,8 +150,10 @@
         color: white;
         box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 
-        &:hover {
-            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+        @media (hover: hover) {
+            &:hover {
+                box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+            }
         }
     }
 
@@ -139,9 +162,11 @@
         color: white;
         border-color: rgba(255, 255, 255, 0.3);
 
-        &:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.5);
+            }
         }
     }
 
@@ -176,8 +201,10 @@
     font-weight: 600;
     transition: all 0.3s ease;
 
-    &:hover {
-        color: #ffffff; // Bright white on hover
-        transform: scale(1.15); // Slight zoom effect
+    @media (hover: hover) {
+        &:hover {
+            color: #ffffff; // Bright white on hover
+            transform: scale(1.15); // Slight zoom effect
+        }
     }
 }

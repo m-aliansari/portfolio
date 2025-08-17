@@ -34,7 +34,7 @@
               is="div"
               :class="styles.statsGrid"
               :initial="{ opacity: 0, scale: 0.8 }"
-              :hovered="{ opacity: 1, scale: 1 }"
+              :visible="{ opacity: 1, scale: 1 }"
               :transition="{ duration: 0.3 }"
             >
               <div
@@ -110,8 +110,9 @@
               <div :class="styles.infoContainer">
                 <span
                   :class="styles.infoLabel"
-                  @mouseenter="hoverShowInfo = true"
+                  @mouseover="hoverShowInfo = true"
                   @mouseleave="hoverShowInfo = false"
+                  @touchend="hoverShowInfo = false"
                   @click="toggleClickShowInfo"
                   >Hover or Click for more info</span
                 >

@@ -2,11 +2,11 @@
   <div>
     <Hero />
     <LazyReviews hydrate-on-idle />
-    <LazyHighlights hydrate-on-visible />
-    <LazyAbout hydrate-on-visible />
-    <LazySkills hydrate-on-visible />
-    <LazyExperience hydrate-on-visible />
-    <LazyContact hydrate-on-visible />
+    <LazyHighlights hydrate-on-idle />
+    <LazyAbout hydrate-on-idle />
+    <LazySkills hydrate-on-idle />
+    <LazyExperience hydrate-on-idle />
+    <LazyContact hydrate-on-idle />
   </div>
 </template>
 

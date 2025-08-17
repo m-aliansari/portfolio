@@ -2,7 +2,7 @@
   <section id="hero" class="hero-section">
     <div class="hero-background">
       <NuxtImg
-        v-if="$viewport.isGreaterThan('mobileStart')"
+        v-if="$viewport.isGreaterOrEquals('mobileStart')"
         src="/images/hero_image.PNG"
         :preload="{ fetchPriority: 'high' }"
         fetchpriority="high"
@@ -11,13 +11,17 @@
         format="webp"
         quality="70"
         :width="
-          $viewport.isGreaterThan('desktopMedium')
-            ? '1600'
-            : $viewport.isGreaterThan('desktop')
-            ? '1280'
-            : $viewport.isGreaterThan('tablet')
-            ? '1024'
-            : '768'
+          $viewport.isLessThan('tabletSmall')
+            ? $viewport.breakpointValue('tabletSmall')
+            : $viewport.isLessThan('tablet')
+            ? $viewport.breakpointValue('tablet')
+            : $viewport.isLessThan('tabletWide')
+            ? $viewport.breakpointValue('tabletWide')
+            : $viewport.isLessThan('desktop')
+            ? $viewport.breakpointValue('desktop')
+            : $viewport.isLessThan('desktopMedium')
+            ? $viewport.breakpointValue('desktopMedium')
+            : '1600'
         "
         style="
           object-position: center;
@@ -31,12 +35,12 @@
         v-else
         src="/images/hero_image_mobile.webp"
         :width="
-          $viewport.isGreaterThan('mobileWide')
-            ? '500'
-            : $viewport.isGreaterThan('mobileMedium')
-            ? '425'
-            : $viewport.isGreaterThan('mobile')
-            ? '375'
+          $viewport.match('mobileWide')
+            ? $viewport.breakpointValue('mobileStart')
+            : $viewport.match('mobileMedium')
+            ? $viewport.breakpointValue('mobileWide')
+            : $viewport.match('mobile')
+            ? $viewport.breakpointValue('mobileMedium')
             : '320'
         "
         :preload="{ fetchPriority: 'high' }"

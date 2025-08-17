@@ -9,9 +9,11 @@
     gap: 0.75rem;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-    &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+        }
     }
 }
 

@@ -9,9 +9,11 @@
     display: flex;
     flex-direction: column;
 
-    &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
     }
 }
 
@@ -46,6 +48,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: rgba(0, 0, 0);
+
+            .imageOverlay {
+                display: flex;
+            }
+        }
+    }
+
+    &:active {
+        .imageOverlay {
+            display: none;
+        }
+    }
 }
 
 .projectImage {
@@ -55,14 +73,6 @@
 
     &.card {
         width: 100%;
-
-        &:hover {
-            background-color: rgba(0, 0, 0);
-
-            ~.imageOverlay {
-                display: flex;
-            }
-        }
     }
 
     &.modalImage {
@@ -98,8 +108,10 @@
         transform: scale(1.2);
     }
 
-    &:hover {
-        background: rgba(255, 255, 255, 0.8);
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
     }
 }
 
@@ -116,8 +128,10 @@
     transition: opacity 0.3s ease;
     z-index: 3;
 
-    &:hover {
-        display: flex;
+    @media (hover: hover) {
+        &:hover {
+            display: flex;
+        }
     }
 }
 
@@ -186,9 +200,11 @@
     transition: all 0.3s ease;
     width: 100%;
 
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
     }
 }
 
@@ -309,8 +325,10 @@
         transition: background-color 0.2s ease;
         pointer-events: auto;
 
-        &:hover {
-            background-color: rgba(0, 0, 0);
+        @media (hover: hover) {
+            &:hover {
+                background-color: rgba(0, 0, 0);
+            }
         }
     }
 
@@ -344,9 +362,11 @@
         transition: background 0.3s ease, transform 0.3s ease;
         cursor: pointer;
 
-        &:hover {
-            background: rgba(0, 0, 0, 0.3);
-            transform: scale(1.05);
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(0, 0, 0, 0.3);
+                transform: scale(1.05);
+            }
         }
     }
 }

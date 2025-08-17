@@ -25,9 +25,11 @@
     margin: 0px auto;
     scroll-margin-top: 80px;
 
-    &:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    @media (hover: hover) {
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
     }
 }
 

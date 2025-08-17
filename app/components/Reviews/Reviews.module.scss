@@ -31,8 +31,10 @@
         font-weight: 500;
         transition: background-color 0.25s ease;
 
-        &:hover {
-            background-color: #059669; // Tailwind emerald-600
+        @media (hover: hover) {
+            &:hover {
+                background-color: #059669; // Tailwind emerald-600
+            }
         }
     }
 }
