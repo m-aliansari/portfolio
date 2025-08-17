@@ -19,6 +19,13 @@ export default defineNuxtConfig({
         {
           rel: "preload",
           as: "font",
+          href: "/fonts/Inter/Inter-SemiBold.woff2",
+          type: "font/woff2",
+          crossorigin: "", // keep empty attribute; safe for caching and same/any origin
+        },
+        {
+          rel: "preload",
+          as: "font",
           href: "/fonts/Inter/Inter-Bold.woff2",
           type: "font/woff2",
           crossorigin: "", // keep empty attribute; safe for caching and same/any origin

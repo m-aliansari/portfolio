@@ -208,3 +208,51 @@
         }
     }
 }
+
+.animate-hero-text {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideFadeIn 0.6s ease-in forwards;
+}
+
+.animate-btn {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideFadeInUp 0.6s ease-in forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
