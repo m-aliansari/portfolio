@@ -75,7 +75,7 @@
         </Motion>
       </div>
 
-      <div v-if="windowWidth > windowHeight" :class="styles.cardActions">
+      <div :class="styles.cardActions">
         <button
           :class="styles.btnView"
           aria-label="View Details button"
@@ -92,63 +92,62 @@
     @click.self="closeModal"
   >
     <div :class="[styles.modalContent]">
-      <div>
-        <Swiper
-          ref="modalSwiperRef"
-          :modules="[Navigation, Pagination]"
-          :navigation="true"
-          :pagination="true"
-          :class="styles.imageCarousel"
+      <Swiper
+        ref="modalSwiperRef"
+        :modules="[Navigation, Pagination, Zoom]"
+        :navigation="true"
+        :pagination="true"
+        :class="[styles.imageCarousel, shouldRotate ? styles.rotated : '']"
+        :direction="shouldRotate ? 'vertical' : 'horizontal'"
+      >
+        <SwiperSlide
+          v-for="(image, imgIndex) in highlight.images"
+          :key="imgIndex"
+          :class="styles.modalCarouselSlide"
         >
-          <SwiperSlide
-            v-for="(image, imgIndex) in highlight.images"
-            :key="imgIndex"
-            :class="styles.modalCarouselSlide"
-          >
-            <div :class="styles.imageWrapper">
-              <!-- Info label and hover info -->
-              <div :class="styles.infoContainer">
-                <span
-                  :class="styles.infoLabel"
-                  @mouseover="hoverShowInfo = true"
-                  @mouseleave="hoverShowInfo = false"
-                  @touchend="hoverShowInfo = false"
-                  @click="toggleClickShowInfo"
-                  >Hover or Click for more info</span
-                >
-                <div
-                  v-if="hoverShowInfo || clickShowInfo"
-                  :class="styles.imageInfo"
-                >
-                  {{ image.description }}
-                </div>
+          <div :class="[styles.imageWrapper]">
+            <!-- Info label and hover info -->
+            <!-- try s_498x1200&pos_right -->
+            <NuxtImg
+              :src="image.path"
+              :alt="`${highlight.title} - Image ${imgIndex + 1}`"
+              :class="[styles.projectImage, styles.modalImage]"
+              :width="windowWidth"
+              loading="lazy"
+              format="webp"
+              quality="100"
+              :modifiers="{ rotate: shouldRotate ? 90 : 0 }"
+            />
+            
+            <div :class="styles.infoContainer">
+              <span :class="styles.infoLabel" @click="toggleClickShowInfo"
+                >Hover or Click for more info</span
+              >
+              <div
+                :class="[
+                  styles.imageInfo,
+                  hoverShowInfo || clickShowInfo ? styles.active : '',
+                ]"
+              >
+                {{ image.description }}
               </div>
-              <NuxtImg
-                :src="image.path"
-                :alt="`${highlight.title} - Image ${imgIndex + 1}`"
-                :class="[styles.projectImage, styles.modalImage]"
-                fit="cover"
-                sizes="lg:150vw"
-                loading="lazy"
-                format="webp"
-                quality="100"
-              />
             </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
       <button :class="styles.closeButton" @click="closeModal">&times;</button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-import "swiper/css";
+import "swiper/css/zoom";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css";
+import "./SwiperOverride.css";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Pagination, Zoom } from "swiper/modules";
 import styles from "./Card.module.scss";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -166,6 +165,9 @@ const hoverShowInfo = ref(false);
 
 const { windowWidth, windowHeight } = useResponsive();
 
+const shouldRotate = computed(() => {
+  return windowHeight.value > windowWidth.value;
+});
 const toggleClickShowInfo = () => {
   clickShowInfo.value = !clickShowInfo.value;
 };

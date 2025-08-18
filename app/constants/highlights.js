@@ -67,7 +67,7 @@ export const HIGHLIGHTS_DATA = [
         stats: {
             Memory: '90% → 30%',
             CPU: '90% → 15%',
-            Cost: '-$60/month'
+            Cost: '-$400/month'
         },
         skills: ["Google Cloud Platform (GCP)", "Performance Optimization", "Cloud Run", "Backend"]
     }

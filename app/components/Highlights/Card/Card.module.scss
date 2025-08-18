@@ -31,6 +31,36 @@
         width: 100%;
         height: 100%;
     }
+
+    &.rotated {
+        max-height: 80vh;
+
+        .imageWrapper {
+            display: flex;
+            height: 100%;
+
+            .infoContainer {
+                top: 10px;
+                right: 20px;
+                width: 400px;
+                left: auto;
+                transform-origin: top right;
+                transform: rotate(90deg) translateX(130%);
+            }
+        }
+
+        .projectImage {
+            border-radius: 10px;
+            width: 100%;
+            object-position: 50% 50%;
+        }
+
+        ~.closeButton {
+            top: auto;
+            bottom: 15px;
+            right: 25px;
+        }
+    }
 }
 
 .carouselContainer {
@@ -70,18 +100,15 @@
     object-fit: contain;
     object-position: top;
     border-radius: 10px;
+    position: relative;
+    height: 100%;
+    width: 100%;
 
     &.card {
         width: 100%;
+        height: auto;
     }
 
-    &.modalImage {
-        width: 90vw;
-
-        &.modalRotate {
-            width: 90vh;
-        }
-    }
 }
 
 .carouselNav {
@@ -274,18 +301,14 @@
     position: relative;
     border-radius: 8px;
     max-width: 90vw;
+    max-height: 90vh;
     overflow: hidden;
-
-    &.modalRotate {
-        max-height: 90vw;
-        max-width: 90vh;
-        transform: rotate(90deg);
-    }
 }
 
 .modalCarouselSlide {
     max-width: 100%;
     max-height: 90vh;
+    width: 100%;
 }
 
 
@@ -293,27 +316,37 @@
     position: absolute;
     top: 15px;
     right: 25px;
-    background: none;
+    background-color: black;
+    color: white;
     border: none;
+    padding: 3px;
+    border-radius: 50%;
     font-size: 1.8rem;
-    color: #333;
+    line-height: 1.2rem;
     cursor: pointer;
+    z-index: 10000;
 }
 
 .imageWrapper {
     position: relative;
-    width: 100%;
-    height: 100%;
+    max-height: 90vh;
+    max-width: 90vw;
+    // width: 100%;
+    // height: 100%;
 }
 
 .infoContainer {
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 10px;
     z-index: 5;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+
+    transform: none;
+    transform-origin: top left;
 
     .infoLabel {
         background-color: rgb(0, 0, 0, 0.8);
@@ -328,20 +361,37 @@
         @media (hover: hover) {
             &:hover {
                 background-color: rgba(0, 0, 0);
+
+                ~.imageInfo {
+                    visibility: visible;
+                }
             }
+        }
+
+        @media (max-width: 500px) {
+            font-size: 16px;
         }
     }
 
     .imageInfo {
+        visibility: hidden;
         margin-top: 6px;
         background: rgba(0, 0, 0);
         color: #ffffff;
-        font-size: 20px;
+        font-size: 18px;
         padding: 10px 10px;
         border-radius: 4px;
         box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
         max-width: 500px;
         line-height: 1.4;
+
+        &.active {
+            visibility: visible;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
     }
 }
 
