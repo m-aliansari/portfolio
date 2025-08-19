@@ -55,24 +55,7 @@
       <p :class="styles.highlightDescription">{{ highlight.description }}</p>
 
       <div :class="styles.highlightSkills">
-        <Motion
-          is="div"
-          v-for="(skill, skillIndex) in highlight.skills"
-          :key="skillIndex"
-          :initial="{ opacity: 0, y: 20 }"
-          :visible-once="{
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 0.5,
-              delay: index * 0.2 + 0.4,
-            },
-          }"
-        >
-          <span :class="styles.skillBadge">
-            {{ skill }}
-          </span>
-        </Motion>
+        <SkillsBadges :skills="highlight.skills" />
       </div>
 
       <div :class="styles.cardActions">
@@ -118,7 +101,7 @@
               quality="100"
               :modifiers="{ rotate: shouldRotate ? 90 : 0 }"
             />
-            
+
             <div :class="styles.infoContainer">
               <span :class="styles.infoLabel" @click="toggleClickShowInfo"
                 >Hover or Click for more info</span

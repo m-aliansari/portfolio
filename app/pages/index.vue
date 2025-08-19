@@ -1,11 +1,11 @@
 <template>
   <div>
     <Hero />
-    <LazyReviews hydrate-on-idle />
-    <LazyHighlights hydrate-on-idle />
     <LazyAbout hydrate-on-idle />
     <LazySkills hydrate-on-idle />
+    <LazyHighlights hydrate-on-idle />
     <LazyExperience hydrate-on-idle />
+    <LazyReviews hydrate-on-idle />
     <LazyContact hydrate-on-idle />
   </div>
 </template>

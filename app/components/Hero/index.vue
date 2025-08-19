@@ -67,12 +67,15 @@
         </h1>
 
         <h2 class="hero-subtitle animate-hero-text delay-100">
-          {{ personalInfo.title }}
+          {{ personalInfo.heroTitle }}
         </h2>
 
         <p class="hero-description animate-hero-text delay-200">
-          Crafting exceptional digital experiences with modern technologies.
-          Specialized in Vue.js, React, Node.js, and cloud solutions.
+          Full Stack Developer specializing in building fast, scalable, and
+          SEO-friendly web applications. Experienced with
+          <strong>Vue.js, React, Node.js, and PostgreSQL</strong>, delivering
+          modern solutions across frontend and backend. Focused on performance
+          optimization, cloud deployment, and long-term maintainability.
         </p>
 
         <div class="hero-cta">
@@ -86,9 +89,7 @@
             View Experience
           </NuxtLink>
         </div>
-        <div
-          class="hero-socials animate-btn delay-600"
-        >
+        <div class="hero-socials animate-btn delay-600">
           <NuxtLink
             :to="personalInfo.whatsapp"
             target="_blank"

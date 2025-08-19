@@ -84,4 +84,8 @@ export const SKILLS_DATA = [
             { label: "Teamwork in Agile/Scrum Environments" },
         ]
     }
-] 
+]
+
+export const FEATURED_SKILLS = [
+    'TypeScript', 'JavaScript', 'React', 'Vue.js', 'Nuxt.js', 'Next.js', 'OpenAI', 'GPT-4o', 'Node.js', 'Python', 'Flask', 'Django', 'Sanic', 'SQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Google Cloud Platform', 'Performance Optimization', 'Docker', 'AWS', 'NoSQL'
+]

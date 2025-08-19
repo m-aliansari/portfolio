@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/no-v-html -->
+<!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <template>
   <Motion
     is="div"
@@ -42,9 +44,8 @@
             delay: index * 0.2 + achievementIndex * 0.1,
           }"
           :viewport="{ once: true }"
-        >
-          {{ achievement }}
-        </Motion>
+          v-html="achievement"
+        />
       </ul>
     </div>
   </Motion>

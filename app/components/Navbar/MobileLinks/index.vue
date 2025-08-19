@@ -25,6 +25,7 @@
         :id="link.path"
         :to="link.path"
         class="navLink"
+        :title="link.title ?? link.name"
         @click="handleClick(link.path)"
       >
         {{ link.name }}

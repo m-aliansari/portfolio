@@ -8,11 +8,11 @@
         :enter="{ opacity: 1, y: 0 }"
         :transition="{ duration: 0.6 }"
       >
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">
-          Passionate Full Stack Developer with {{ personalInfo.experience }} of
+        <h2 class="section-title">Full-Stack Developer</h2>
+        <h3 class="section-subtitle">
+          Nuxt.js, Node.js & PostgreSQL Specialist with {{ personalInfo.experience }} of
           experience
-        </p>
+        </h3>
       </Motion>
 
       <div :class="styles.aboutContent">
@@ -23,9 +23,12 @@
           :visible-once="{ opacity: 1, x: 0 }"
           :transition="{ duration: 1.5, delay: 0.4 }"
         >
-          <p>{{ personalInfo.about.intro }}</p>
-          <p>{{ personalInfo.about.current }}</p>
-          <p>{{ personalInfo.about.passion }}</p>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <p v-html="personalInfo.about.intro"/>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <p v-html="personalInfo.about.current"/>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <p v-html="personalInfo.about.passion"/>
         </Motion>
 
         <Motion
@@ -40,7 +43,7 @@
             :key="index"
             :class="styles.statItem"
           >
-            <h3>{{ stat.value }}</h3>
+            <h4>{{ stat.value }}</h4>
             <p>{{ stat.label }}</p>
           </div>
         </Motion>
@@ -51,7 +54,7 @@
 
 <script setup>
 import { PERSONAL_INFO } from "~/constants/personal";
-import styles from "./About.module.scss"
+import styles from "./About.module.scss";
 
 const personalInfo = PERSONAL_INFO;
 </script>

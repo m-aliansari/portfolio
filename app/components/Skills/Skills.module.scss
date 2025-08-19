@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding-bottom: 3rem;
 }
 
@@ -24,6 +24,16 @@
     max-width: 350px;
     margin: 0px auto;
     scroll-margin-top: 80px;
+
+    &:last-child {
+        // Styles specifically for the last grid item
+        grid-column: 1 / -1;
+    }
+
+    &.featuredSkills {
+        margin: 0;
+        max-width: unset;
+    }
 
     @media (hover: hover) {
         &:hover {
@@ -49,6 +59,10 @@
     font-weight: 700;
     margin-bottom: 1rem;
     color: #3b82f6;
+
+    &.featured {
+        color: black
+    }
 }
 
 .skillList {
@@ -80,5 +94,38 @@
         margin-bottom: 0.3rem;
         font-size: 0.95rem;
         color: #6b7280;
+    }
+}
+
+.btnWrapper {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+
+    .btn {
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1rem;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        color: white;
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+
+        @media (hover: hover) {
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+            }
+        }
     }
 }
