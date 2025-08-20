@@ -1,0 +1,73 @@
+export const JSON_LD = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://muhammadaliansari.com/",
+            url: "https://muhammadaliansari.com/",
+            name: "Muhammad Ali Ansari Portfolio",
+            description:
+                "Portfolio of Muhammad Ali Ansari, Full Stack Developer specializing in Vue.js, Nuxt.js, React, Node.js, and cloud solutions.",
+            publisher: {
+                "@type": "Person",
+                "@id": "https://muhammadaliansari.com/#person",
+            },
+        },
+        {
+            "@type": "Person",
+            "@id": "https://muhammadaliansari.com/#person",
+            name: "Muhammad Ali Ansari",
+            url: "https://muhammadaliansari.com/",
+            image:
+                "https://muhammadaliansari.com/images/muhammad-ali-ansari-profile-picture.webp",
+            description:
+                "Full Stack Developer with 4+ years of experience in Vue.js, Nuxt.js, React, Node.js, and cloud solutions. Skilled in performance optimization, SEO, and cutting-edge web technologies.",
+            jobTitle: "Full Stack Developer",
+            worksFor: {
+                "@type": "Organization",
+                name: "Awards Box",
+                url: "https://awardsbox.com",
+            },
+            knowsAbout: [
+                "Full Stack Development",
+                "Frontend Development",
+                "Backend Development",
+                "Vue.js",
+                "Nuxt.js",
+                "React",
+                "Node.js",
+                "JavaScript",
+                "TypeScript",
+                "PostgreSQL",
+                "Google Cloud Platform",
+                "Performance Optimization",
+                "SEO Strategies",
+                "Memory Leak Prevention",
+                "Search Engine Development",
+                "Chatbot Development",
+                "Database Optimization",
+                "API Development",
+                "RESTful APIs",
+                "GraphQL",
+                "Python",
+                "Docker",
+                "Kubernetes",
+                "Microservices",
+                "Serverless Architecture",
+                "CI/CD",
+                "Git",
+                "Agile Development",
+                "Scrum",
+            ],
+            sameAs: [
+                "https://github.com/m-aliansari",
+                "https://www.linkedin.com/in/muhammad-ali-ansari-61304a1b3/",
+                "https://www.fiverr.com/maa_coding",
+            ],
+            mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": "https://muhammadaliansari.com/",
+            },
+        },
+    ],
+}

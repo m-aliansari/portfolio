@@ -38,7 +38,7 @@ export const EXPERIENCE_DATA = [
     id: 3,
     title: 'Full-stack Developer',
     company: 'Trusted Tech Solutions, Inc.',
-    location: 'Part-time (Remote',
+    location: 'Part-time (Remote)',
     period: 'Aug 2020 - Dec 2020 · 5 mos',
     website: 'trustedtechsolutions.net',
     achievements: [
