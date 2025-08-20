@@ -1,5 +1,8 @@
 # Muhammad Ali Ansari - Portfolio Website
 
+## 🌐 Live Portfolio
+👉 [Visit my website](https://muhammadaliansari.com/)
+
 A modern, responsive portfolio website built with Nuxt 4, Vue 3, and motion-v animations. Features excellent SEO, performance optimizations, and a clean, maintainable codebase.
 
 ## 🚀 Features
