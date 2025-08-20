@@ -90,16 +90,14 @@
         >
           <div :class="[styles.imageWrapper]">
             <!-- Info label and hover info -->
-            <!-- try s_498x1200&pos_right -->
             <NuxtImg
-              :src="image.path"
+              :src="shouldRotate ? image.rotatedPath : image.path"
               :alt="`${highlight.title} - Image ${imgIndex + 1}`"
               :class="[styles.projectImage, styles.modalImage]"
               :width="windowWidth"
               loading="lazy"
               format="webp"
               quality="100"
-              :modifiers="{ rotate: shouldRotate ? 90 : 0 }"
             />
 
             <div :class="styles.infoContainer">

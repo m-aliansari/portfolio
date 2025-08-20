@@ -21,7 +21,6 @@
             v-if="job.website"
             :href="`https://${job.website}`"
             target="_blank"
-            rel="noopener noreferrer"
             :class="styles.websiteLink"
           >
             {{ job.website }}

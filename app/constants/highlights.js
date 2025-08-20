@@ -6,12 +6,15 @@ export const HIGHLIGHTS_DATA = [
         images: [
             {
                 path: '/images/screenshots/awards-search-engine/Crime_company-bbc.PNG',
+                rotatedPath: '/images/screenshots/awards-search-engine/Crime_company-bbc-rotated.PNG',
                 description: 'Example of Faceted Search built with Vue (Nuxt), TailwindCSS as frontend, and PostgreSQL, Redis and Python (Sanic) as backend, showing results for crime shows produced by BBC'
             }, {
                 path: '/images/screenshots/awards-search-engine/Daytime-Emmy_sort-awards-count-desc.PNG',
+                rotatedPath: '/images/screenshots/awards-search-engine/Daytime-Emmy_sort-awards-count-desc-rotated.PNG',
                 description: 'Example of Faceted Search built with Vue (Nuxt), TailwindCSS as frontend, and PostgreSQL, Redis and Python (Sanic) as backend, showing results for Daytime Emmy awards tv shows sorted by most awards won'
             }, {
                 path: '/images/screenshots/awards-search-engine/British-Best-Visual-Effects.PNG',
+                rotatedPath: '/images/screenshots/awards-search-engine/British-Best-Visual-Effects-rotated.PNG',
                 description: 'Example of Faceted Search built with Vue (Nuxt), TailwindCSS as frontend, and PostgreSQL, Redis and Python (Sanic) as backend, showing results for British Best Visual Effects awards shows'
             }
 
@@ -29,12 +32,15 @@ export const HIGHLIGHTS_DATA = [
         description: 'Created a OpenAI GPT-4o powered chatbot for interpreting user questions, generating and running SQL (PostgreSQL) queries, and returning live results through a seamless chat interface build with Vue (Nuxt).',
         images: [{
             path: '/images/screenshots/awards-gpt-chatbot/which-amazon-prime-shows-won-emmy-awards.PNG',
+            rotatedPath: '/images/screenshots/awards-gpt-chatbot/which-amazon-prime-shows-won-emmy-awards-rotated.PNG',
             description: 'Example of OpenAI GPT-4o chatbot answering the question "which amazon prime shows won emmy awards?" by fetching data from live PostgreSQL database using Faceted Search'
         }, {
             path: '/images/screenshots/awards-gpt-chatbot/show-me-HBO-award-winning-tv-shows.PNG',
+            rotatedPath: '/images/screenshots/awards-gpt-chatbot/show-me-HBO-award-winning-tv-shows-rotated.PNG',
             description: 'Example of OpenAI GPT-4o chatbot answering the prompt "show me HBO award winning tv shows" by fetching data from live PostgreSQL database using Faceted Search'
         }, {
             path: '/images/screenshots/awards-gpt-chatbot/which-movies-won-venice-awards.PNG',
+            rotatedPath: '/images/screenshots/awards-gpt-chatbot/which-movies-won-venice-awards-rotated.PNG',
             description: 'Example of OpenAI GPT-4o chatbot answering the question "which movies won venice awards?" by fetching data from live PostgreSQL database using Faceted Search'
         }
         ],
@@ -52,13 +58,16 @@ export const HIGHLIGHTS_DATA = [
         images: [
             {
                 path: '/images/screenshots/awards-memory-leak-prevention/all-metrics-charts-before-after-solution.PNG',
+                rotatedPath: '/images/screenshots/awards-memory-leak-prevention/all-metrics-charts-before-after-solution-rotated.PNG',
                 description: 'Shows performance optimization of Cloud Run with metrics (CPU utilization, Billable time, container instances(auto-scale enabled), memory utilization) before and after my deployment of solutions on Aug 6'
 
             }, {
                 path: '/images/screenshots/awards-memory-leak-prevention/memory-utilization-chart-before-after-solution.PNG',
+                rotatedPath: '/images/screenshots/awards-memory-leak-prevention/memory-utilization-chart-before-after-solution-rotated.PNG',
                 description: 'Shows performance optimization of Cloud Run by significant drop in memory utilization after my deployment of solutions on Aug 6'
             }, {
                 path: '/images/screenshots/awards-memory-leak-prevention/CPU-utilization-chart-before-after-solution.PNG',
+                rotatedPath: '/images/screenshots/awards-memory-leak-prevention/CPU-utilization-chart-before-after-solution-rotated.PNG',
                 description: 'Shows performance optimization of Cloud Run by significant drop in CPU utilization after my deployment of solutions on Aug 6'
 
             }
