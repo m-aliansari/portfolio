@@ -121,8 +121,8 @@
             aria-label="GitHub"
             external
           >
-            <Icon
-              name="simple-icons:github"
+            <Icons
+              :name="ICON_NAMES.GITHUB"
               :size="$viewport.isLessThan('mobileWide') ? '30' : '40'"
             />
           </NuxtLink>

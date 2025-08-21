@@ -3,5 +3,7 @@ export const ICON_NAMES = {
     FIVERR: 'fiverr',
     WHATSAPP: 'whatsapp',
     EMAIL: 'email',
-    GMAIL: 'gmail'
+    GMAIL: 'gmail',
+    PHONE: 'phone',
+    GITHUB: 'github'
 }

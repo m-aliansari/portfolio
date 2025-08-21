@@ -43,7 +43,7 @@
           :transition="{ duration: 0.6, delay: 0.2 }"
         >
           <div :class="styles.contactItem">
-            <Icon name="mdi:phone-incoming" size="40" />
+            <Icons :name="ICON_NAMES.PHONE" size="40" />
             <div>
               <h3>Phone</h3>
               <p>{{ personalInfo.phone }}</p>

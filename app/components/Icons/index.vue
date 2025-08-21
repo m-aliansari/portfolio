@@ -23,6 +23,16 @@
     :width="size"
     :height="size"
   />
+  <IconsPhone
+    v-if="name === ICON_NAMES.PHONE"
+    :width="size"
+    :height="size"
+  />
+  <IconsGithub
+    v-if="name === ICON_NAMES.GITHUB"
+    :width="size"
+    :height="size"
+  />
 </template>
 
 <script setup>
